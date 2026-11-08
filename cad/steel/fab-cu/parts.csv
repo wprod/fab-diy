@@ -1,0 +1,3 @@
+name,qty,kind,thickness_mm,flat_size_mm,assembly_path,files
+Fab Control Unit Base v50 - Base,1,bent,1.5,,Fab Control Unit Base v50,step/Fab_Control_Unit_Base_v50_Base_t1.5mm_x1.step
+Fab Control Unit Cover v14 - Cover,1,bent,1.5,,Fab Control Unit Cover v14,step/Fab_Control_Unit_Cover_v14_Cover_t1.5mm_x1.step

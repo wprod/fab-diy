@@ -1,0 +1,15 @@
+name,qty,kind,thickness_mm,flat_size_mm,assembly_path,files
+Cable chain support 02 v4 - Component1,4,bent,3.0,,Fab Gantry V2 v40 > Cable chain support 02 v4,step/Cable_chain_support_02_v4_Component1_t3mm_x4.step
+Bearing Support Offset Plate v7,2,flat,3.0,42.0 x 42.0,Fab Gantry V2 v40,dxf/Bearing_Support_Offset_Plate_v7_t3mm_x2.dxf step/Bearing_Support_Offset_Plate_v7_t3mm_x2.step
+Fab XL - X_Bearing blocks & nuts v10,1,flat,8.0,178.0 x 240.0,Fab X Carriage V2 v22 > Specific parts & nuts,dxf/Fab_XL_X_Bearing_blocks_nuts_v10_t8mm_x1.dxf step/Fab_XL_X_Bearing_blocks_nuts_v10_t8mm_x1.step
+Fab XL - X_Bearing Z v1,1,flat,8.0,130.0 x 65.0,Fab X Carriage V2 v22 > Specific parts & nuts,dxf/Fab_XL_X_Bearing_Z_v1_t8mm_x1.dxf step/Fab_XL_X_Bearing_Z_v1_t8mm_x1.step
+Fab XL - X_Motor Z v1,1,flat,8.0,160.0 x 73.0,Fab X Carriage V2 v22 > Specific parts & nuts,dxf/Fab_XL_X_Motor_Z_v1_t8mm_x1.dxf step/Fab_XL_X_Motor_Z_v1_t8mm_x1.step
+Fab XL - Z_plate v4,1,flat,8.0,160.0 x 190.0,Fab Z Carriage V2 v12,dxf/Fab_XL_Z_plate_v4_t8mm_x1.dxf step/Fab_XL_Z_plate_v4_t8mm_x1.step
+Foot Plate 3060 M6 v2,6,flat,10.0,60.0 x 30.0,Fab Table Frame V2 v46 > Frame structure_Part01 > 600mm I-type profile 3060 ,dxf/Foot_Plate_3060_M6_v2_t10mm_x6.dxf step/Foot_Plate_3060_M6_v2_t10mm_x6.step
+Gantry back plate v12,1,flat,8.0,550.0 x 200.0,Fab Gantry V2 v40,dxf/Gantry_back_plate_v12_t8mm_x1.dxf step/Gantry_back_plate_v12_t8mm_x1.step
+Gantry_V2 v25,2,flat,10.0,432.0 x 300.0,Fab Gantry V2 v40,dxf/Gantry_V2_v25_t10mm_x2.dxf step/Gantry_V2_v25_t10mm_x2.step
+Limit switches support 02 v15,4,flat,8.0,80.0 x 120.0,Fab Table Frame V2 v46 > Rack + Rail + Profile,dxf/Limit_switches_support_02_v15_t8mm_x4.dxf step/Limit_switches_support_02_v15_t8mm_x4.step
+Nut Offset bracket v2,2,flat,8.0,52.0 x 40.0,Fab X Carriage V2 v22,dxf/Nut_Offset_bracket_v2_t8mm_x2.dxf step/Nut_Offset_bracket_v2_t8mm_x2.step
+Rack & Pinion drive plate_04 v21,2,flat,8.0,286.0 x 151.8,Motor & Pinion Assembly Right V2 v25,dxf/Rack_Pinion_drive_plate_04_v21_t8mm_x2.dxf step/Rack_Pinion_drive_plate_04_v21_t8mm_x2.step
+Spindle plate,1,flat,8.0,117.8 x 110.0,Fab Z Carriage V2 v12 > Fab XL - VFD Spindle Plate v3,dxf/Spindle_plate_t8mm_x1.dxf step/Spindle_plate_t8mm_x1.step
+Triangulation v6,14,flat,8.0,394.3 x 30.0,Fab Table Frame V2 v46 > Gusset Plates  > Gusset plate,dxf/Triangulation_v6_t8mm_x14.dxf step/Triangulation_v6_t8mm_x14.step

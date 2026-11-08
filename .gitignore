@@ -1,0 +1,11 @@
+# Environnement Python local
+.venv/
+__pycache__/
+
+# Clone officiel (se re-clone avec la commande du README)
+upstream/
+
+# STEP officiels : 280 Mo, se re-téléchargent avec la commande du README
+cad/source/
+
+.DS_Store

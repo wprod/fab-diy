@@ -1,0 +1,90 @@
+# Fab DIY
+
+Construire soi-même une CNC grand format à partir des fichiers open source de la
+**[Mekanika Fab](https://www.mekanika.io/fr/products/fab)** : surface de travail 1330 × 2700 mm,
+rails HGR20, vis à billes sur X et Z, double crémaillère module 2 sur Y,
+NEMA34 6 A, contrôleur PlanetCNC, broche 2,2 kW.
+
+- Dépôt officiel : <https://github.com/mekanika-dev/fab>
+- Guide de montage : <https://support.mekanika.io/products/fab-cnc>
+- Modèle 3D dans le navigateur : [Fab](https://a360.co/4mOqgvm), [boîtier de commande](https://a360.co/46sqwel)
+- Discord Mekanika : <https://discord.gg/n7RsBtUdGc>
+
+## Contenu
+
+```
+fab-diy/
+├── bom/
+│   ├── fab-diy-bom.csv      Liste d'achat chiffrée : 191 lignes + port, fournisseur, lien, prix TTC
+│   └── chiffrage/           Recherche de prix par lot (A structure, B guidage, C électronique, D visserie/acier)
+├── cad/
+│   ├── source/              STEP officiels (Git LFS, ~280 Mo, non versionnés)
+│   └── steel/               Pièces acier extraites des STEP
+│       ├── fab/             Machine : 13 DXF + STEP par pièce + parts.csv
+│       ├── fab-cu/          Boîtier de commande : base + capot (tôle pliée)
+│       ├── vfd-cu/          Boîtier du variateur : base + capot (tôle pliée)
+│       └── preview.png      Aperçu de tous les DXF
+├── docs/
+│   ├── budget.md            Synthèse du chiffrage France (~7 230 € TTC), fournisseurs alternatifs, variantes, points à régler
+│   ├── verifications.md     Mesures dans le STEP : rainures des profilés, cornières, crémaillère
+│   └── pieces-acier.md      Correspondance nomenclature ↔ DXF, écarts, conseils de découpe
+├── scripts/
+│   ├── flatten_bom.py       Nomenclatures ERP imbriquées → liste d'achat
+│   ├── price_bom.py         Fusionne bom/chiffrage/ dans la liste d'achat et totalise
+│   ├── extract_steel.py     STEP → DXF (plaques) / STEP (tôles pliées)
+│   └── preview_dxf.py       Planche d'aperçu des DXF
+├── upstream/fab/            Clone du dépôt officiel (nomenclatures, schémas, notice)
+└── LICENSES/                CERN-OHL-S-2.0 et CC-BY-SA-4.0 (licences d'origine)
+```
+
+## Régénérer
+
+```bash
+# 1. Sources officielles (sans git-lfs : on prend les STEP via media.githubusercontent.com)
+git clone https://github.com/mekanika-dev/fab.git upstream/fab
+mkdir -p cad/source && cd cad/source && for f in "FAB V1.0.stp" "FAB-CU V1.0.stp" "VFD-CU V1.2.stp"; do
+  curl -fL -o "$f" "https://media.githubusercontent.com/media/mekanika-dev/fab/main/cad/${f// /%20}"; done; cd ../..
+
+# 2. Environnement Python (OpenCascade + ezdxf)
+uv venv .venv --python 3.12 && uv pip install --python .venv/bin/python -r requirements.txt
+
+# 3. Liste d'achat, puis chiffrage (les prix viennent de bom/chiffrage/*.csv)
+python3 scripts/flatten_bom.py && python3 scripts/price_bom.py
+
+# 4. Pièces acier (~1 min et ~2 Go de RAM pour le STEP principal)
+.venv/bin/python scripts/extract_steel.py "cad/source/FAB V1.0.stp"   cad/steel/fab
+.venv/bin/python scripts/extract_steel.py "cad/source/FAB-CU V1.0.stp" cad/steel/fab-cu
+.venv/bin/python scripts/extract_steel.py "cad/source/VFD-CU V1.2.stp" cad/steel/vfd-cu
+.venv/bin/python scripts/preview_dxf.py cad/steel cad/steel/preview.png
+```
+
+## Feuille de route
+
+- [x] Récupérer les fichiers officiels (nomenclatures, STEP, schémas, notice)
+- [x] Liste d'achat aplatie avec catégories
+- [x] DXF des plaques acier + STEP des tôles pliées
+- [x] Chiffrer la liste d'achat pour la France : ~7 230 € TTC, voir `docs/budget.md`
+- [ ] Lever les écarts (goussets 12 ou 14, pattes CU-VFD absentes du STEP) : voir `docs/pieces-acier.md`
+- [x] Vérifier rainures, cornières et crémaillère dans le STEP : voir `docs/verifications.md`
+- [ ] Régler les points restants de `docs/budget.md` (arbres moteurs, pignon-poulie, vis X de 1500 mm…)
+- [ ] Devis réel découpe laser et pliage (téléverser `cad/steel/`)
+- [ ] Profilés : devis coupe à longueur + taraudage M6 aux extrémités (voir les désignations)
+- [ ] Électronique : carte des fins de course (schéma seul, `upstream/fab/docs/PCB-limits.qet`)
+- [x] Choix du contrôle : PlanetCNC Mk3/4 sur le Raspberry Pi 5 (comme l'original), moteurs en boucle fermée
+- [ ] Gabarits de montage : `upstream/fab/cad/FAB Mounting Gauge.dxf`
+- [ ] Montage en suivant le guide officiel
+
+## Points ouverts
+
+- **La broche n'est pas dans la nomenclature.** Seul le variateur y figure ; trois lignes ont été ajoutées à la main dans la BOM (broche, pinces ER20, support).
+- **Carte des fins de course :** il n'y a que le schéma QElectroTech, pas de Gerber. Elle adapte 6 capteurs inductifs PNP NF vers le contrôleur via optocoupleurs. Une carte optocoupleur du commerce ou un petit PCB KiCad fait l'affaire.
+- **PlanetCNC n'est pas libre.** Le contrôleur Mk3/4 et sa licence sont à acheter chez PlanetCNC. Le projet le garde, comme l'original : grblHAL a été étudié puis écarté (voir `docs/budget.md`).
+
+## Licence
+
+Les fichiers d'origine sont © 2025 Mekanika SRL :
+- **CAO :** CERN-OHL-S-2.0.
+- **Nomenclatures et docs :** CC-BY-SA-4.0.
+
+Les DXF/STEP extraits ici sont des dérivés et restent sous **CERN-OHL-S-2.0**. Usage personnel libre. Si tu distribues ou vends une machine dérivée, tu dois publier tes sources modifiées sous la même licence.
+Le nom et le logo Mekanika ne sont pas couverts par ces licences.
