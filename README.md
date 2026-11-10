@@ -31,6 +31,7 @@ fab-diy/
 │   ├── budget.md            Synthèse du chiffrage France (~7 290 € TTC), fournisseurs alternatifs, variantes, points à régler
 │   ├── verifications.md     Mesures dans le STEP : rainures, cornières, crémaillère, axe Y en tronçons, comptages
 │   ├── profiles-coupe.md    Fiche de coupe et de taraudage des profilés, à joindre au devis
+│   ├── plan-cablage.md      Câblage d'origine relevé dans les schémas, modifications, décisions à prendre
 │   ├── boitier-commande.md  Implantation des ajouts de la boucle fermée dans le boîtier de commande
 │   ├── carte-fins-de-course.md  Schéma décodé, câblage, composants, points à vérifier
 │   └── pieces-acier.md      Correspondance nomenclature ↔ DXF, écarts, conseils de découpe
@@ -76,7 +77,7 @@ python3 scripts/flatten_bom.py && python3 scripts/price_bom.py
 - [ ] Profilés 30×60 de 1410 mm : 11 dans le STEP, 9 dans la nomenclature. Chiffré pour 11, à confirmer avec le guide de montage
 - [x] Pattes CU-VFD (M01379) absentes du STEP : redessinées d'après les cotes des boîtiers et des traverses, voir `docs/pieces-acier.md`
 - [x] Vérifier rainures, cornières et crémaillère dans le STEP : voir `docs/verifications.md`
-- [ ] Régler les points restants de `docs/budget.md`. Faits : vis X (1500 mm confirmés), poulie Y (5M 80 dents), implantation du boîtier. Restent : arbres moteurs et brochage des poulies, fabrication du pignon-poulie, plan de câblage, devis de port
+- [ ] Régler les points restants de `docs/budget.md`. Faits : vis X (1500 mm confirmés), poulie Y (5M 80 dents), implantation du boîtier. Plan de câblage rédigé (`docs/plan-cablage.md`, 4 décisions à prendre). Restent : arbres moteurs et brochage des poulies, fabrication du pignon-poulie, devis de port
 - [ ] Devis réel découpe laser et pliage (téléverser `cad/steel/`)
 - [ ] Profilés : devis coupe à longueur + taraudage M6 aux extrémités. Fiche prête : `docs/profiles-coupe.md`
 - [ ] Électronique : carte des fins de course. Redessinée, Gerber prêts (`docs/carte-fins-de-course.md`) ; à vérifier avec une embase en main, puis à faire fabriquer
