@@ -82,3 +82,29 @@ En retirer 2 laisserait un pied sans contreventement. **On en découpe 14.** Le 
 Les 60×60 de 1410 mm sont bien 6 dans les deux sources : 5 traverses de table et 1 traverse basse au milieu.
 
 L'écart n'est pas expliqué : le guide de montage en ligne (support.mekanika.io) n'a pas pu être consulté depuis cette session. Les traverses basses ne sont pas symétriques (2 à l'avant, 1 à l'arrière), donc 2 d'entre elles sont peut-être optionnelles. **La BOM est chiffrée pour 11** (+62 €), à confirmer avant de commander.
+
+## 6. Vis à billes de l'axe X : il faut bien 1500 mm
+
+Relevé le 10 novembre 2026 dans le STEP, le long de l'axe X du portique :
+
+| Élément | Position en X |
+|---|---|
+| Vis à billes, longueur hors tout **1500 mm** | de −40 à 1460 |
+| Palier fixe FK12, côté moteur | de −22 à 12 |
+| Palier libre FF12 (épaisseur 15 mm) | de 1448 à 1463 |
+| Flasques du portique | −55 à −45 et 1485 à 1495 |
+
+- La vis s'arrête 3 mm avant la face extérieure du palier libre. **Une vis de 1450 mm s'arrêterait à X = 1410, soit 38 mm avant ce palier** : son extrémité ne serait pas tenue.
+- Sans palier au bout, une vis de 16 mm aussi longue fouette bien avant la vitesse de déplacement annoncée (20 m/min, soit 1000 tr/min avec un pas de 20 mm). Une vis plus courte n'est donc pas une option, sauf à déplacer le palier libre.
+- **À commander :** longueur hors tout de 1500 mm, usinages d'extrémité standard pour FK12 (côté moteur, bout de Ø10 pour l'accouplement) et FF12.
+
+## 7. Poulie de l'axe Y : HTD-5M, 80 dents
+
+La pièce s'appelle « Pulley HTD3M & Pinion » dans le STEP, mais son diamètre extérieur mesuré est de **126,1 à 126,2 mm**.
+
+| Hypothèse | Diamètre extérieur théorique |
+|---|---|
+| HTD-5M, 80 dents | 80 × 5 / π − 1,14 = **126,18 mm** |
+| HTD-3M, 132 dents | 132 × 3 / π − 0,76 = 125,29 mm |
+
+C'est donc bien une **5M de 80 dents**, comme chiffré. Avec la poulie moteur de 20 dents, la réduction est de 4. L'ensemble poulie et pignon fait 45 mm de large et tourne sur une vis à épaulement M10 de Ø12.
