@@ -25,6 +25,7 @@ fab-diy/
 │       ├── fab/             Machine : 13 DXF + STEP par pièce + parts.csv
 │       ├── fab-cu/          Boîtier de commande : base + capot (tôle pliée)
 │       ├── vfd-cu/          Boîtier du variateur : base + capot (tôle pliée)
+│       ├── diy/             Pièces redessinées : pattes de fixation des boîtiers (DXF + plan de pose)
 │       └── preview.png      Aperçu de tous les DXF
 ├── docs/
 │   ├── budget.md            Synthèse du chiffrage France (~7 290 € TTC), fournisseurs alternatifs, variantes, points à régler
@@ -36,6 +37,7 @@ fab-diy/
 │   ├── flatten_bom.py       Nomenclatures ERP imbriquées → liste d'achat
 │   ├── price_bom.py         Fusionne bom/chiffrage/ dans la liste d'achat et totalise
 │   ├── make_limits_pcb.py   Génère la carte des fins de course (Gerber) et vérifie les isolements
+│   ├── make_cu_bracket.py   Patte de fixation des boîtiers : DXF et plan de pose
 │   ├── extract_steel.py     STEP → DXF (plaques) / STEP (tôles pliées)
 │   └── preview_dxf.py       Planche d'aperçu des DXF
 ├── upstream/fab/            Clone du dépôt officiel (nomenclatures, schémas, notice)
@@ -71,7 +73,7 @@ python3 scripts/flatten_bom.py && python3 scripts/price_bom.py
 - [x] Chiffrer la liste d'achat pour la France : ~7 290 € TTC, voir `docs/budget.md`
 - [x] Goussets : 14, positions relevées dans le STEP (`docs/verifications.md`)
 - [ ] Profilés 30×60 de 1410 mm : 11 dans le STEP, 9 dans la nomenclature. Chiffré pour 11, à confirmer avec le guide de montage
-- [ ] Pattes CU-VFD (M01379) absentes du STEP : à redessiner, voir `docs/pieces-acier.md`
+- [x] Pattes CU-VFD (M01379) absentes du STEP : redessinées d'après les cotes des boîtiers et des traverses, voir `docs/pieces-acier.md`
 - [x] Vérifier rainures, cornières et crémaillère dans le STEP : voir `docs/verifications.md`
 - [ ] Régler les points restants de `docs/budget.md` (arbres moteurs, pignon-poulie, vis X de 1500 mm…)
 - [ ] Devis réel découpe laser et pliage (téléverser `cad/steel/`)
