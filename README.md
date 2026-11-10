@@ -19,6 +19,7 @@ fab-diy/
 │   └── chiffrage/           Recherche de prix par lot (A structure, B guidage, C électronique, D visserie/acier)
 ├── cad/
 │   ├── source/              STEP officiels (Git LFS, ~280 Mo, non versionnés)
+│   ├── pcb-fins-de-course/  Carte des fins de course : Gerber, perçage, aperçu
 │   ├── gabarits/            Gabarit de montage officiel (DXF, PMMA 3 mm, 60 × 60 mm)
 │   └── steel/               Pièces acier extraites des STEP
 │       ├── fab/             Machine : 13 DXF + STEP par pièce + parts.csv
@@ -29,10 +30,12 @@ fab-diy/
 │   ├── budget.md            Synthèse du chiffrage France (~7 290 € TTC), fournisseurs alternatifs, variantes, points à régler
 │   ├── verifications.md     Mesures dans le STEP : rainures, cornières, crémaillère, axe Y en tronçons, comptages
 │   ├── profiles-coupe.md    Fiche de coupe et de taraudage des profilés, à joindre au devis
+│   ├── carte-fins-de-course.md  Schéma décodé, câblage, composants, points à vérifier
 │   └── pieces-acier.md      Correspondance nomenclature ↔ DXF, écarts, conseils de découpe
 ├── scripts/
 │   ├── flatten_bom.py       Nomenclatures ERP imbriquées → liste d'achat
 │   ├── price_bom.py         Fusionne bom/chiffrage/ dans la liste d'achat et totalise
+│   ├── make_limits_pcb.py   Génère la carte des fins de course (Gerber) et vérifie les isolements
 │   ├── extract_steel.py     STEP → DXF (plaques) / STEP (tôles pliées)
 │   └── preview_dxf.py       Planche d'aperçu des DXF
 ├── upstream/fab/            Clone du dépôt officiel (nomenclatures, schémas, notice)
@@ -73,7 +76,7 @@ python3 scripts/flatten_bom.py && python3 scripts/price_bom.py
 - [ ] Régler les points restants de `docs/budget.md` (arbres moteurs, pignon-poulie, vis X de 1500 mm…)
 - [ ] Devis réel découpe laser et pliage (téléverser `cad/steel/`)
 - [ ] Profilés : devis coupe à longueur + taraudage M6 aux extrémités. Fiche prête : `docs/profiles-coupe.md`
-- [ ] Électronique : carte des fins de course (schéma seul, `upstream/fab/docs/PCB-limits.qet`)
+- [ ] Électronique : carte des fins de course. Redessinée, Gerber prêts (`docs/carte-fins-de-course.md`) ; à vérifier avec une embase en main, puis à faire fabriquer
 - [x] Choix du contrôle : PlanetCNC Mk3/4 sur le Raspberry Pi 5 (comme l'original), moteurs en boucle fermée
 - [ ] Gabarits de montage : DXF copié dans `cad/gabarits/`, à faire découper (PMMA 3 mm)
 - [ ] Montage en suivant le guide officiel
@@ -81,7 +84,7 @@ python3 scripts/flatten_bom.py && python3 scripts/price_bom.py
 ## Points ouverts
 
 - **La broche n'est pas dans la nomenclature.** Seul le variateur y figure ; trois lignes ont été ajoutées à la main dans la BOM (broche, pinces ER20, support).
-- **Carte des fins de course :** il n'y a que le schéma QElectroTech, pas de Gerber. Elle adapte 6 capteurs inductifs PNP NF vers le contrôleur via optocoupleurs. Une carte optocoupleur du commerce ou un petit PCB KiCad fait l'affaire.
+- **Carte des fins de course :** Mekanika ne publie que le schéma. La carte est redessinée dans `cad/pcb-fins-de-course/`, mais elle n'a pas encore été fabriquée ni essayée.
 - **PlanetCNC n'est pas libre.** Le contrôleur Mk3/4 et sa licence sont à acheter chez PlanetCNC. Le projet le garde, comme l'original : grblHAL a été étudié puis écarté (voir `docs/budget.md`).
 
 ## Licence
