@@ -13,7 +13,7 @@ La **nuance d'acier n'est pas indiquée** dans le dépôt (S235 par défaut, à 
 | M00284 | Y gantry | Gantry_V2 v25 | 10 mm | 2 | 432 × 300 | `fab/dxf/Gantry_V2_v25_t10mm_x2.dxf` |
 | M00285 | Y gantry back plate | Gantry back plate v12 | 8 mm | 1 | 550 × 200 | `fab/dxf/Gantry_back_plate_v12_t8mm_x1.dxf` |
 | M00283 | R&P drive plate | Rack & Pinion drive plate_04 | 8 mm | 2 | 286 × 152 | `fab/dxf/Rack_Pinion_drive_plate_04_v21_t8mm_x2.dxf` |
-| M00281 | Gusset plate | Triangulation v6 | 8 mm | **12 (BOM) / 14 (STEP)** | 394 × 30 | `fab/dxf/Triangulation_v6_t8mm_x14.dxf` |
+| M00281 | Gusset plate | Triangulation v6 | 8 mm | **14** (12 dans la BOM) | 394 × 30 | `fab/dxf/Triangulation_v6_t8mm_x14.dxf` |
 | M00282 | Limit sensor support plate | Limit switches support 02 v15 | 8 mm | 4 | 80 × 120 | `fab/dxf/Limit_switches_support_02_v15_t8mm_x4.dxf` |
 | M00354 | Nut Offset | Nut Offset bracket v2 | 8 mm | 2 | 52 × 40 | `fab/dxf/Nut_Offset_bracket_v2_t8mm_x2.dxf` |
 | M00364 | Bearing Support Offset Plate | Bearing Support Offset Plate v7 | 3 mm | 2 | 42 × 42 | `fab/dxf/Bearing_Support_Offset_Plate_v7_t3mm_x2.dxf` |
@@ -40,7 +40,7 @@ Pour faire le développé soi-même : atelier *SheetMetal* de FreeCAD (gratuit) 
 ## À savoir avant de commander
 
 - **Écarts à lever :**
-  - **Goussets :** la nomenclature en donne 12, le STEP en contient 14. Compter sur le modèle ou demander à Mekanika.
+  - ~~**Goussets**~~ : **levé, 14.** La nomenclature en donne 12, mais les 14 du STEP sont tous utiles (positions dans [verifications.md](verifications.md), section 5).
   - **CU-VFD Mounting plate 3 mm ×4 (M01379) :** absente des STEP, à redessiner (petites pattes de fixation des boîtiers).
   - **Spindle plate :** présente dans le STEP mais pas dans la nomenclature de la Fab, car elle est vendue avec la broche.
 - **Pièces symétriques :** la *drive plate* gauche et la droite ont la même géométrie. On découpe 2 fois le même DXF et on retourne une des deux pièces au montage.
@@ -53,7 +53,7 @@ Pour faire le développé soi-même : atelier *SheetMetal* de FreeCAD (gratuit) 
     - Drive plate : 4 × Ø4,3, soit un perçage de taraudage M5.
 - **Petits trous dans les plaques épaisses :** en découpe laser, on vise un Ø au moins égal à l'épaisseur. Les Ø4,3 et Ø4,5 dans de l'acier de 8 mm sont à faire **pointer au laser puis percer**, ou à percer soi-même. Demander au découpeur.
 - **Regroupement par épaisseur** (utile pour les devis) :
-  - **8 mm :** 26 pièces (28 si l'on suit les 14 goussets du STEP).
+  - **8 mm :** 28 pièces, dont 14 goussets.
   - **10 mm :** 2 gantries, plus 6 plaques de pied si on ne les achète pas.
   - **3 mm :** 2 plaques plates + 4 pliées.
   - **1,5 mm :** 4 capots pliés.

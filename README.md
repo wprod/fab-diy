@@ -19,14 +19,16 @@ fab-diy/
 │   └── chiffrage/           Recherche de prix par lot (A structure, B guidage, C électronique, D visserie/acier)
 ├── cad/
 │   ├── source/              STEP officiels (Git LFS, ~280 Mo, non versionnés)
+│   ├── gabarits/            Gabarit de montage officiel (DXF, PMMA 3 mm, 60 × 60 mm)
 │   └── steel/               Pièces acier extraites des STEP
 │       ├── fab/             Machine : 13 DXF + STEP par pièce + parts.csv
 │       ├── fab-cu/          Boîtier de commande : base + capot (tôle pliée)
 │       ├── vfd-cu/          Boîtier du variateur : base + capot (tôle pliée)
 │       └── preview.png      Aperçu de tous les DXF
 ├── docs/
-│   ├── budget.md            Synthèse du chiffrage France (~7 230 € TTC), fournisseurs alternatifs, variantes, points à régler
-│   ├── verifications.md     Mesures dans le STEP : rainures des profilés, cornières, crémaillère
+│   ├── budget.md            Synthèse du chiffrage France (~7 290 € TTC), fournisseurs alternatifs, variantes, points à régler
+│   ├── verifications.md     Mesures dans le STEP : rainures, cornières, crémaillère, axe Y en tronçons, comptages
+│   ├── profiles-coupe.md    Fiche de coupe et de taraudage des profilés, à joindre au devis
 │   └── pieces-acier.md      Correspondance nomenclature ↔ DXF, écarts, conseils de découpe
 ├── scripts/
 │   ├── flatten_bom.py       Nomenclatures ERP imbriquées → liste d'achat
@@ -63,15 +65,17 @@ python3 scripts/flatten_bom.py && python3 scripts/price_bom.py
 - [x] Récupérer les fichiers officiels (nomenclatures, STEP, schémas, notice)
 - [x] Liste d'achat aplatie avec catégories
 - [x] DXF des plaques acier + STEP des tôles pliées
-- [x] Chiffrer la liste d'achat pour la France : ~7 230 € TTC, voir `docs/budget.md`
-- [ ] Lever les écarts (goussets 12 ou 14, pattes CU-VFD absentes du STEP) : voir `docs/pieces-acier.md`
+- [x] Chiffrer la liste d'achat pour la France : ~7 290 € TTC, voir `docs/budget.md`
+- [x] Goussets : 14, positions relevées dans le STEP (`docs/verifications.md`)
+- [ ] Profilés 30×60 de 1410 mm : 11 dans le STEP, 9 dans la nomenclature. Chiffré pour 11, à confirmer avec le guide de montage
+- [ ] Pattes CU-VFD (M01379) absentes du STEP : à redessiner, voir `docs/pieces-acier.md`
 - [x] Vérifier rainures, cornières et crémaillère dans le STEP : voir `docs/verifications.md`
 - [ ] Régler les points restants de `docs/budget.md` (arbres moteurs, pignon-poulie, vis X de 1500 mm…)
 - [ ] Devis réel découpe laser et pliage (téléverser `cad/steel/`)
-- [ ] Profilés : devis coupe à longueur + taraudage M6 aux extrémités (voir les désignations)
+- [ ] Profilés : devis coupe à longueur + taraudage M6 aux extrémités. Fiche prête : `docs/profiles-coupe.md`
 - [ ] Électronique : carte des fins de course (schéma seul, `upstream/fab/docs/PCB-limits.qet`)
 - [x] Choix du contrôle : PlanetCNC Mk3/4 sur le Raspberry Pi 5 (comme l'original), moteurs en boucle fermée
-- [ ] Gabarits de montage : `upstream/fab/cad/FAB Mounting Gauge.dxf`
+- [ ] Gabarits de montage : DXF copié dans `cad/gabarits/`, à faire découper (PMMA 3 mm)
 - [ ] Montage en suivant le guide officiel
 
 ## Points ouverts

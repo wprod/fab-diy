@@ -20,12 +20,12 @@ Pour tout recalculer : `python3 scripts/price_bom.py`. Pour un chiffrage belge :
 
 | | Montant TTC |
 |---|---|
-| **Total chiffré, port compris** | **≈ 7 230 €** |
-| dont prix lus sur la page produit | 4 846 € (67 %) |
+| **Total chiffré, port compris** | **≈ 7 290 €** |
+| dont prix lus sur la page produit | 4 908 € (67 %) |
 | dont estimations | 2 381 € (acier découpé, sécurité électrique, articles AliExpress, port) |
-| Avec 10 % d'imprévus (fils, outillage, oublis) | ≈ 7 950 € |
-| Variante économique (voir plus bas) | ≈ 5 680 € |
-| Avec le kit broche 2,2 kW + VFD au lieu de la Makita | ≈ 7 370 € |
+| Avec 10 % d'imprévus (fils, outillage, oublis) | ≈ 8 020 € |
+| Variante économique (voir plus bas) | ≈ 5 740 € |
+| Avec le kit broche 2,2 kW + VFD au lieu de la Makita | ≈ 7 430 € |
 | **Kit officiel Mekanika**, « Pack Fab dès 12 463 € HT » | ≈ 14 960 € TTC |
 
 **Ce qui a changé depuis le premier chiffrage (~7 530 €) :**
@@ -109,7 +109,7 @@ La revue finale a trouvé que la nomenclature n'avait **aucune coupure de puissa
 | Poste | TTC | Commentaire |
 |---|---:|---|
 | Guidage & transmission | 2 620 € | Crémaillères Q6 rectifiées : **1 277 €**. Rails HGR20 Sorotec : 441 €. Poulies Y clavetées |
-| Structure alu | 1 135 € | Profilés coupés et taraudés M6 chez Dold |
+| Structure alu | 1 197 € | Profilés coupés et taraudés M6 chez Dold. 11 profilés 30×60 de 1410 mm, comme dans le STEP (la nomenclature en compte 9) |
 | Moteurs & électronique | 833 € | Kits en boucle fermée (NEMA 34 9 N·m ×3, NEMA 23), alimentations 72, 48 et 24 V, PlanetCNC (carte + licence 226 €), relais 25 A. Raspberry Pi déjà possédé |
 | Visserie & fixations | 729 € | Cornières et écrous coulissants chez Dold, vis chez TME et Motedis.fr |
 | Pièces acier découpées | 590 € | **Estimation**, fourchette ~360 à ~945 € selon le découpeur |
@@ -121,7 +121,7 @@ La revue finale a trouvé que la nomenclature n'avait **aucune coupure de puissa
 | Martyr, gabarits, impression 3D, divers | 183 € | Dont martyr MDF et inserts acier : 135 € |
 
 **Fournisseurs principaux :**
-- Dold Mechatronik : ~2 540 €, en deux commandes (profilés via aluprofile-express.de, et mécanique : 2 crémaillères de 1 m, pignons, accouplements).
+- Dold Mechatronik : ~2 600 €, en deux commandes (profilés via aluprofile-express.de, et mécanique : 2 crémaillères de 1 m, pignons, accouplements).
 - Sorotec : 887 € (rails, patins, paliers, port compris).
 - DamenCNC : ~810 € (2 crémaillères de 2 m, port compris).
 - Découpe laser : ~700 €.
@@ -159,7 +159,8 @@ La revue finale a trouvé que la nomenclature n'avait **aucune coupure de puissa
 13. **Plan de câblage moteurs, codeurs et capteurs.** Les câbles d'origine étaient vendus montés (Belram). Il faut fixer les connecteurs de façade : XLR4 femelles de câble et XLR3 mâles pour les capteurs, et des embases pour les 4 câbles codeur, que la nomenclature n'a pas. Les contacts Micro-Fit étaient prévus pour l'ancien moteur Z. Les câbles Y2 et Z font 5,3 et 5,7 m : prendre des rallonges codeur de 5 m, en plus des 1,7 m du kit.
 14. **Fins de course :** câblage d'origine (6 capteurs PNP NF, carte d'adaptation à optocoupleurs). Il n'y a que le schéma QElectroTech : faire le PCB d'après lui ou prendre une carte optocoupleur du commerce.
 15. **Alimentation 48 V :** son potentiomètre monte jusqu'à ~52,8 V. La laisser à 48 V au plus (limite du CL57T). Récupérer le lien exact du kit NEMA 23 avant de commander.
-16. **Goussets :** 12 dans la nomenclature, 14 dans le modèle 3D. La ligne est chiffrée pour 14. Compter sur la machine avant la découpe.
+16. ~~**Goussets.**~~ **Réglé :** 14, comme dans le modèle 3D. Les 14 positions sont relevées dans [verifications.md](verifications.md), section 5. La ligne est chiffrée pour 14.
+17. **Profilés 30×60 de 1410 mm :** 11 dans le modèle 3D, 9 dans la nomenclature. La ligne est chiffrée pour 11 (+62 €). À confirmer avec le guide de montage ou sur le Discord avant de commander : 2 profilés en trop coûtent peu, 2 en moins bloquent le montage.
 
 ## Ce que le DIY ne remplace pas
 
@@ -168,4 +169,4 @@ Le kit officiel inclut ce que ce budget ne compte pas :
 - des pièces livrées prêtes à monter : pignon-poulie, crémaillères et profilés appairés ;
 - un montage annoncé à ~25 h, contre plusieurs semaines de sourcing et d'usinage en DIY.
 
-L'économie réelle tourne autour de **7 000 à 7 700 €** (imprévus compris ou non), ou **~9 300 €** en variante économique. Avec la Makita, la machine n'est pas tout à fait équivalente : compter ~145 € de plus pour la broche 2,2 kW.
+L'économie réelle tourne autour de **6 900 à 7 700 €** (imprévus compris ou non), ou **~9 200 €** en variante économique. Avec la Makita, la machine n'est pas tout à fait équivalente : compter ~145 € de plus pour la broche 2,2 kW.
