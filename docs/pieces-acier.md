@@ -13,7 +13,7 @@ La **nuance d'acier n'est pas indiquée** dans le dépôt (S235 par défaut, à 
 | M00284 | Y gantry | Gantry_V2 v25 | 10 mm | 2 | 432 × 300 | `fab/dxf/Gantry_V2_v25_t10mm_x2.dxf` |
 | M00285 | Y gantry back plate | Gantry back plate v12 | 8 mm | 1 | 550 × 200 | `fab/dxf/Gantry_back_plate_v12_t8mm_x1.dxf` |
 | M00283 | R&P drive plate | Rack & Pinion drive plate_04 | 8 mm | 2 | 286 × 152 | `fab/dxf/Rack_Pinion_drive_plate_04_v21_t8mm_x2.dxf` |
-| M00281 | Gusset plate | Triangulation v6 | 8 mm | **12 (BOM) / 14 (STEP)** | 394 × 30 | `fab/dxf/Triangulation_v6_t8mm_x14.dxf` |
+| M00281 | Gusset plate | Triangulation v6 | 8 mm | **14** (12 dans la BOM) | 394 × 30 | `fab/dxf/Triangulation_v6_t8mm_x14.dxf` |
 | M00282 | Limit sensor support plate | Limit switches support 02 v15 | 8 mm | 4 | 80 × 120 | `fab/dxf/Limit_switches_support_02_v15_t8mm_x4.dxf` |
 | M00354 | Nut Offset | Nut Offset bracket v2 | 8 mm | 2 | 52 × 40 | `fab/dxf/Nut_Offset_bracket_v2_t8mm_x2.dxf` |
 | M00364 | Bearing Support Offset Plate | Bearing Support Offset Plate v7 | 3 mm | 2 | 42 × 42 | `fab/dxf/Bearing_Support_Offset_Plate_v7_t3mm_x2.dxf` |
@@ -23,6 +23,7 @@ La **nuance d'acier n'est pas indiquée** dans le dépôt (S235 par défaut, à 
 | M00358 | Z-Axis Bottom Bearing Plate | Fab XL - X_Bearing Z v1 | 8 mm | 1 | 130 × 65 | `fab/dxf/Fab_XL_X_Bearing_Z_v1_t8mm_x1.dxf` |
 | — | *(absente de la BOM)* support de broche | Spindle plate | 8 mm | 1 | 118 × 110 | `fab/dxf/Spindle_plate_t8mm_x1.dxf` |
 | M00488 | End connection plate 30x60 *(pièce achetée)* | Foot Plate 3060 M6 v2 | 10 mm | 6 | 60 × 30 | `fab/dxf/Foot_Plate_3060_M6_v2_t10mm_x6.dxf` |
+| M01379 | CU-VFD Mounting plate *(redessinée, pas la pièce d'origine)* | — | 3 mm | 4 | 64 × 45 | `diy/CU_VFD_Mounting_plate_DIY_t3mm_x4.dxf` |
 
 ## Tôles pliées (STEP 3D à envoyer tel quel)
 
@@ -34,14 +35,14 @@ Pour faire le développé soi-même : atelier *SheetMetal* de FreeCAD (gratuit) 
 | M00278 | Cable chain holder | 3 mm | 4 | `fab/step/Cable_chain_support_02_v4_Component1_t3mm_x4.step` |
 | M00279 | Control Unit Base | 1,5 mm | 1 | `fab-cu/step/Fab_Control_Unit_Base_v50_Base_t1.5mm_x1.step` |
 | M00280 | Control Unit Cover | 1,5 mm | 1 | `fab-cu/step/Fab_Control_Unit_Cover_v14_Cover_t1.5mm_x1.step` |
-| M00355 | VFD Base | 1,5 mm | 1 | `vfd-cu/step/VFD_Enclosure_Base_v26_Base_t1.5mm_x1.step` |
-| M00356 | VFD Cover | 1,5 mm | 1 | `vfd-cu/step/VFD_Enclosure_Cover_v5_Cover_t1.5mm_x1.step` |
+| M00355 | VFD Base *(reportée, voir plus bas)* | 1,5 mm | 1 | `vfd-cu/step/VFD_Enclosure_Base_v26_Base_t1.5mm_x1.step` |
+| M00356 | VFD Cover *(reportée)* | 1,5 mm | 1 | `vfd-cu/step/VFD_Enclosure_Cover_v5_Cover_t1.5mm_x1.step` |
 
 ## À savoir avant de commander
 
 - **Écarts à lever :**
-  - **Goussets :** la nomenclature en donne 12, le STEP en contient 14. Compter sur le modèle ou demander à Mekanika.
-  - **CU-VFD Mounting plate 3 mm ×4 (M01379) :** absente des STEP, à redessiner (petites pattes de fixation des boîtiers).
+  - ~~**Goussets**~~ : **levé, 14.** La nomenclature en donne 12, mais les 14 du STEP sont tous utiles (positions dans [verifications.md](verifications.md), section 5).
+  - ~~**CU-VFD Mounting plate 3 mm ×4 (M01379)**~~ : absente des STEP, **redessinée**. Voir « Pattes des boîtiers » plus bas.
   - **Spindle plate :** présente dans le STEP mais pas dans la nomenclature de la Fab, car elle est vendue avec la broche.
 - **Pièces symétriques :** la *drive plate* gauche et la droite ont la même géométrie. On découpe 2 fois le même DXF et on retourne une des deux pièces au montage.
 - **Logo :** la *Gantry back plate* contient le logo MEKANIKA découpé, vu en miroir dans le DXF (il se lit à l'endroit sur l'autre face). C'est leur marque : à garder pour un usage perso, à retirer si tu publies ou vends ton dérivé.
@@ -53,7 +54,48 @@ Pour faire le développé soi-même : atelier *SheetMetal* de FreeCAD (gratuit) 
     - Drive plate : 4 × Ø4,3, soit un perçage de taraudage M5.
 - **Petits trous dans les plaques épaisses :** en découpe laser, on vise un Ø au moins égal à l'épaisseur. Les Ø4,3 et Ø4,5 dans de l'acier de 8 mm sont à faire **pointer au laser puis percer**, ou à percer soi-même. Demander au découpeur.
 - **Regroupement par épaisseur** (utile pour les devis) :
-  - **8 mm :** 26 pièces (28 si l'on suit les 14 goussets du STEP).
+  - **8 mm :** 28 pièces, dont 14 goussets.
   - **10 mm :** 2 gantries, plus 6 plaques de pied si on ne les achète pas.
-  - **3 mm :** 2 plaques plates + 4 pliées.
-  - **1,5 mm :** 4 capots pliés.
+  - **3 mm :** 2 plaques plates + 4 pattes de boîtier + 4 pliées.
+  - **1,5 mm :** 2 capots pliés pour le boîtier de commande ; 2 de plus pour le boîtier VFD, reportés.
+
+## Pattes des boîtiers (M01379)
+
+La nomenclature compte 4 « CU-VFD Mounting plate 3 mm », livrées avec 10 vis M5×12 et 10 écrous coulissants M5. La pièce n'est dans aucun STEP, et les boîtiers ne sont pas placés dans le modèle de la machine. Elle est donc **redessinée** : c'est une pièce qui remplit la même fonction, pas une copie de l'originale.
+
+![Patte et plan de pose](../cad/steel/diy/pattes-boitiers.png)
+
+### Ce que montrent les STEP
+
+Les deux traverses basses avant (30×60 de 1410 mm, à Y = −1262 et −974) sont à **288 mm d'entraxe**. Cet écart correspond aux pieds des deux boîtiers :
+
+| Boîtier | Entraxe des pieds M4 | Position par rapport aux traverses |
+|---|---|---|
+| Commande | 335 × 420 mm | 335 − 17 = 318 mm = largeur hors tout des deux traverses : les pieds les encadrent **par l'extérieur** |
+| VFD | 242 × 145 mm | 242 + 17 = 259 mm pour 258 mm entre les traverses : les pieds se logent **à l'intérieur** |
+
+Les pieds en caoutchouc font Ø17 mm. Les deux boîtiers se posent donc sur ces deux traverses, calés par leurs pieds. C'est aussi ce qui explique que les traverses basses ne soient pas symétriques (voir [verifications.md](verifications.md), section 5).
+
+Le trou de pied tombe à 23,5 mm de l'axe de la traverse pour le boîtier de commande, et à 23,0 mm pour le VFD : **une seule patte sert aux deux**.
+
+### La patte
+
+- Plaque de 64 × 45 mm, acier 3 mm, coins arrondis R3.
+- 1 trou Ø4,5 : la patte se glisse entre le fond du boîtier et le pied en caoutchouc, serrée par la tige M4 du pied.
+- 2 lumières de 5,5 × 9 mm : vis M5×12 dans la rainure du dessus de la traverse. Les lumières rattrapent ±1,75 mm en travers.
+- Les vis M5 sont placées **au-delà du bord du boîtier**, dans le sens de la traverse. Sous le boîtier, il n'y aurait pas la place pour les têtes.
+- La pièce est plate : on la retourne pour les coins opposés.
+
+Génération : `.venv/bin/python scripts/make_cu_bracket.py` (le script contrôle les cotes ci-dessus).
+
+### Pose
+
+- **2 pattes par boîtier, en diagonale** : 4 pattes et 8 vis M5, ce qui correspond à la nomenclature (4 pattes, 10 vis).
+- Avec 2 pattes, deux coins du boîtier sont surélevés de 3 mm et les deux autres non. Pour une assise plane, découper **8 pattes** et en mettre une sous chaque pied : compter alors 16 vis M5×12 et 16 écrous coulissants M5.
+- La zone entre les deux traverses est libre dans le STEP.
+
+### À vérifier
+
+- La position des boîtiers est **déduite des cotes**, pas lue dans le guide de montage (support.mekanika.io n'est pas accessible depuis cette session). La coïncidence des deux entraxes laisse peu de doute, mais un coup d'œil au guide le confirmera.
+- Diamètre réel des pieds en caoutchouc achetés : s'ils dépassent Ø17, ils buteront contre la traverse. Les lumières laissent 1,75 mm.
+- **Boîtier VFD reporté :** avec la Makita, le relais et la prise sont dans le boîtier de commande ([plan-cablage.md](plan-cablage.md)). Les deux tôles du boîtier VFD ne sont pas à découper pour l'instant, et 2 pattes suffisent. En découper 4 quand même évite une seconde commande le jour où la broche arrive.

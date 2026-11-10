@@ -13,6 +13,7 @@ Les recherches sont dans [`bom/chiffrage/`](../bom/chiffrage/), rangées en lots
 | H | Visserie livrée en France |
 | I | Moteurs en boucle fermée, martyr |
 | J | Revue finale : arrêt d'urgence câblé, relais 25 A pour la Makita, poulies clavetées |
+| K | Choix de câblage : contacteur à bobine 24 V, relais et prise de la Makita dans le boîtier de commande, boîtier VFD reporté |
 
 Pour tout recalculer : `python3 scripts/price_bom.py`. Pour un chiffrage belge : `FAB_PAYS=BE python3 scripts/price_bom.py`.
 
@@ -21,11 +22,11 @@ Pour tout recalculer : `python3 scripts/price_bom.py`. Pour un chiffrage belge :
 | | Montant TTC |
 |---|---|
 | **Total chiffré, port compris** | **≈ 7 230 €** |
-| dont prix lus sur la page produit | 4 846 € (67 %) |
-| dont estimations | 2 381 € (acier découpé, sécurité électrique, articles AliExpress, port) |
+| dont prix lus sur la page produit | 4 908 € (68 %) |
+| dont estimations | 2 319 € (acier découpé, sécurité électrique, articles AliExpress, port) |
 | Avec 10 % d'imprévus (fils, outillage, oublis) | ≈ 7 950 € |
 | Variante économique (voir plus bas) | ≈ 5 680 € |
-| Avec le kit broche 2,2 kW + VFD au lieu de la Makita | ≈ 7 370 € |
+| Avec le kit broche 2,2 kW + VFD au lieu de la Makita | ≈ 7 450 € (boîtier VFD compris) |
 | **Kit officiel Mekanika**, « Pack Fab dès 12 463 € HT » | ≈ 14 960 € TTC |
 
 **Ce qui a changé depuis le premier chiffrage (~7 530 €) :**
@@ -54,7 +55,7 @@ Pour tout recalculer : `python3 scripts/price_bom.py`. Pour un chiffrage belge :
   - un support alu Ø65 mm (à vérifier : un vrai 65,0 mm d'alésage) ;
   - une prise de façade 2P+T.
 - **Spindle plate :** percer ses trous au gabarit du support Ø65 avant la découpe.
-- **Le boîtier VFD devient un boîtier relais.** PlanetCNC (M3/M5) pilote le module relais 5 V d'origine, qui commande un relais 25 A alimentant la Makita. Ce relais est en aval du contacteur d'arrêt d'urgence (lot J) : **l'arrêt d'urgence coupe la Makita électriquement**, sans dépendre du logiciel.
+- **Pas de boîtier VFD pour l'instant (lot K).** Le relais 25 A et la prise de la Makita sont dans le boîtier de commande. PlanetCNC (M3/M5) pilote le module relais 5 V d'origine, qui commande le relais 25 A. Ce relais est en aval du contacteur d'arrêt d'urgence : **l'arrêt d'urgence coupe la Makita électriquement**, sans dépendre du logiciel. Les tôles du boîtier VFD seront à découper le jour où la broche 2,2 kW arrive.
 - **Limites :**
   - 710 W, 3 fois moins de puissance ;
   - vitesse réglée à la main, minimum 10 000 tr/min ;
@@ -97,7 +98,7 @@ La commande reste **PlanetCNC Mk3/4 + licence sur le Raspberry Pi 5**, comme l'o
 
 La revue finale a trouvé que la nomenclature n'avait **aucune coupure de puissance câblée**. L'arrêt d'urgence allait seulement au contrôleur : il dépendait du logiciel, ce qui n'est pas une sécurité. Chaîne retenue :
 
-`C14 + fusible → disjoncteur 15 A → contacteur 25 A (bobine 230 V, auto-maintien) → alimentations 72 V et 48 V, relais Makita (et plus tard VFD)`
+`C14 + fusible → disjoncteur 15 A → contacteur 25 A (bobine 24 V CC, auto-maintien) → alimentations 72 V et 48 V, relais Makita (et plus tard VFD)`
 
 - **Arrêt d'urgence Schneider XB5 à 2 contacts NF :** le premier coupe la bobine du contacteur, le second va à l'entrée arrêt d'urgence de PlanetCNC.
 - **Bouton marche vert :** après un arrêt d'urgence ou une coupure secteur, rien ne redémarre seul.
@@ -109,22 +110,22 @@ La revue finale a trouvé que la nomenclature n'avait **aucune coupure de puissa
 | Poste | TTC | Commentaire |
 |---|---:|---|
 | Guidage & transmission | 2 620 € | Crémaillères Q6 rectifiées : **1 277 €**. Rails HGR20 Sorotec : 441 €. Poulies Y clavetées |
-| Structure alu | 1 135 € | Profilés coupés et taraudés M6 chez Dold |
+| Structure alu | 1 197 € | Profilés coupés et taraudés M6 chez Dold. 11 profilés 30×60 de 1410 mm, comme dans le STEP (la nomenclature en compte 9) |
 | Moteurs & électronique | 833 € | Kits en boucle fermée (NEMA 34 9 N·m ×3, NEMA 23), alimentations 72, 48 et 24 V, PlanetCNC (carte + licence 226 €), relais 25 A. Raspberry Pi déjà possédé |
 | Visserie & fixations | 729 € | Cornières et écrous coulissants chez Dold, vis chez TME et Motedis.fr |
-| Pièces acier découpées | 590 € | **Estimation**, fourchette ~360 à ~945 € selon le découpeur |
+| Pièces acier découpées | 527 € | **Estimation**, fourchette ~320 à ~850 € selon le découpeur. Sans les tôles du boîtier VFD, reportées |
 | Frais de port | 516 € | ~16 envois, dont 126 € chez DamenCNC (barres de 2 m, estimation prudente) et 52 € chez StepperOnline |
-| Câblage & connectique | 285 € | Prises et multiprise au standard français, rallonges codeur |
+| Câblage & connectique | 287 € | Prises et multiprise au standard français, rallonges codeur |
 | Gestion des câbles | 160 € | Chaînes, chemin de câbles, goulottes |
 | Capteurs & sécurité | 157 € | 6 inductifs M12 PNP, palpeur, arrêt d'urgence 2 NF, contacteur de puissance, bouton marche |
 | Broche | 20 € | Makita déjà possédée : seulement le support Ø65 |
 | Martyr, gabarits, impression 3D, divers | 183 € | Dont martyr MDF et inserts acier : 135 € |
 
 **Fournisseurs principaux :**
-- Dold Mechatronik : ~2 540 €, en deux commandes (profilés via aluprofile-express.de, et mécanique : 2 crémaillères de 1 m, pignons, accouplements).
+- Dold Mechatronik : ~2 600 €, en deux commandes (profilés via aluprofile-express.de, et mécanique : 2 crémaillères de 1 m, pignons, accouplements).
 - Sorotec : 887 € (rails, patins, paliers, port compris).
 - DamenCNC : ~810 € (2 crémaillères de 2 m, port compris).
-- Découpe laser : ~700 €.
+- Découpe laser : ~640 €.
 - AliExpress : ~430 €.
 - StepperOnline : 452 € (4 kits en boucle fermée, rallonges, port compris).
 - PlanetCNC : 240 € (carte Mk3/4, licence, port).
@@ -144,8 +145,8 @@ La revue finale a trouvé que la nomenclature n'avait **aucune coupure de puissa
 
 1. **Arbres moteurs.** Les NEMA 34 en boucle fermée (34HS46-6004D-E1000, 9 N·m) ont un arbre Ø14 mm claveté au lieu de 12,7, et le NEMA 23 un arbre Ø8 au lieu de 6,35. **Lot J :** les 2 poulies Y sont à faire brocher (clavette 5 mm DIN 6885) et l'accouplement X passe à moyeux serrants. Trouver l'atelier de brochage, ou une poulie vendue clavetée.
 2. ~~**NEMA23 à 72 V.**~~ **Réglé :** le driver CL57T a sa propre alimentation 48 V. **Stock :** il ne restait que 2 kits NEMA 23 à l'entrepôt allemand le 8 novembre.
-3. **Pignon-poulie de l'axe Y.** C'est une pièce spéciale Mekanika, introuvable toute faite, et Mekanika ne publie pas le prix de ses pièces détachées. Chiffrée en pignon M2 Z15 (Dold) + poulie HTD-5M 80T (AliExpress) + assemblage en atelier, ~70 € l'ensemble, non trempé.
-4. **Vis à billes X de 1500 mm.** Beaucoup de vendeurs plafonnent à 1450 mm. L'écrou SFS1620 doit faire Ø28 pour entrer dans le boîtier DSG16H.
+3. **Pignon-poulie de l'axe Y.** La poulie est bien une HTD-5M de 80 dents (diamètre mesuré dans le STEP, [verifications.md](verifications.md), section 7). C'est une pièce spéciale Mekanika, introuvable toute faite, et Mekanika ne publie pas le prix de ses pièces détachées. Chiffrée en pignon M2 Z15 (Dold) + poulie HTD-5M 80T (AliExpress) + assemblage en atelier, ~70 € l'ensemble, non trempé.
+4. **Vis à billes X de 1500 mm.** Beaucoup de vendeurs plafonnent à 1450 mm. **Vérifié dans le STEP : il faut bien 1500 mm hors tout**, une 1450 n'atteint pas le palier libre ([verifications.md](verifications.md), section 6). L'écrou SFS1620 doit faire Ø28 pour entrer dans le boîtier DSG16H.
 5. ~~**Rainure du 60×60.**~~ **Vérifié** ([verifications.md](verifications.md)) : tout est en rainure 6, et les crémaillères Dold et Gambini sont identiques à celle du STEP.
 6. **Licence PlanetCNC.** Elle est vendue à part, incluse dans les 240 €. Sans elle, la carte est limitée à 25 lignes de G-code. **TVA StepperOnline :** le panier n'ajoute aucune ligne de TVA depuis l'entrepôt allemand ; les prix sont lus comme TTC, à confirmer au paiement.
 7. ~~**Visserie Wegertseder.**~~ **Réglé :** TME et Motedis.fr livrent les particuliers en France.
@@ -154,12 +155,13 @@ La revue finale a trouvé que la nomenclature n'avait **aucune coupure de puissa
 8. **Port DamenCNC** pour des barres de 2 m : estimé à 126 €, non publié. **Demander un devis de port** avant de commander.
 9. **Chaîne porte-câbles.** Chiffrée en 24×60 au lieu de 25×50 : vérifier les embouts face aux supports acier.
 10. **Acier.** Seul un vrai devis (téléverser les DXF/STEP de `cad/steel/`) donnera le prix. Les trous de Ø4,3 à 5,5 dans le 8 mm sont à faire pointer puis percer.
-11. **Boîtier de commande (tôles M00279/M00280).** Il est dessiné pour PlanetCNC, les drivers 2DM860H et une seule alimentation. Les CL86T ont l'encombrement des 2DM860H. **Avant la découpe laser**, vérifier que le driver CL57T, l'alimentation LRS-350-48 (215×115×30 mm), le contacteur, le relais sur rail DIN et 4 embases codeur y tiennent, et ajouter leurs perçages. Une tôle découpée ne se reprend pas.
+11. **Boîtier de commande (tôles M00279/M00280).** Étudié dans [boitier-commande.md](boitier-commande.md) : le CL57T, l'alimentation LRS-350-48, le contacteur et le relais tiennent, **sans modifier les tôles avant la découpe**. Les perçages en plus se font à la main dans la tôle de 1,5 mm. Les dimensions des pièces ajoutées restent à confirmer sur leurs fiches, et le pont du rail DIN est à fabriquer.
 12. **Rails Y aboutés.** L'original achète des rails « docking », appairés pour être mis bout à bout. Faire confirmer par écrit à Sorotec des rails rectifiés en bout, marqués par paire, avec un pas de trous continu à la jonction. Sinon, il y aura une marche à chaque raccord.
-13. **Plan de câblage moteurs, codeurs et capteurs.** Les câbles d'origine étaient vendus montés (Belram). Il faut fixer les connecteurs de façade : XLR4 femelles de câble et XLR3 mâles pour les capteurs, et des embases pour les 4 câbles codeur, que la nomenclature n'a pas. Les contacts Micro-Fit étaient prévus pour l'ancien moteur Z. Les câbles Y2 et Z font 5,3 et 5,7 m : prendre des rallonges codeur de 5 m, en plus des 1,7 m du kit.
-14. **Fins de course :** câblage d'origine (6 capteurs PNP NF, carte d'adaptation à optocoupleurs). Il n'y a que le schéma QElectroTech : faire le PCB d'après lui ou prendre une carte optocoupleur du commerce.
+13. ~~**Plan de câblage.**~~ **Rédigé** dans [plan-cablage.md](plan-cablage.md), choix faits (lot K) : contacteur à bobine 24 V CC, relais et prise de la Makita dans le boîtier de commande, bouton marche en façade, presse-étoupes pour les câbles codeur. Restent des points à confirmer sur les notices (palpeur en 5 V, sortie alarme des drivers, attribution des axes).
+14. **Fins de course :** la carte est redessinée, Gerber prêts ([carte-fins-de-course.md](carte-fins-de-course.md)). Elle est passive ; l'optocoupleur est un module séparé, à prendre en version 24 V. **Embases XLR 3 : NC3FAV et non NC3FAV1-0**, qui mettrait les signaux au châssis. Reste à vérifier le sens des embases avec une pièce en main avant de commander le circuit.
 15. **Alimentation 48 V :** son potentiomètre monte jusqu'à ~52,8 V. La laisser à 48 V au plus (limite du CL57T). Récupérer le lien exact du kit NEMA 23 avant de commander.
-16. **Goussets :** 12 dans la nomenclature, 14 dans le modèle 3D. La ligne est chiffrée pour 14. Compter sur la machine avant la découpe.
+16. ~~**Goussets.**~~ **Réglé :** 14, comme dans le modèle 3D. Les 14 positions sont relevées dans [verifications.md](verifications.md), section 5. La ligne est chiffrée pour 14.
+17. **Profilés 30×60 de 1410 mm :** 11 dans le modèle 3D, 9 dans la nomenclature. La ligne est chiffrée pour 11 (+62 €). À confirmer avec le guide de montage ou sur le Discord avant de commander : 2 profilés en trop coûtent peu, 2 en moins bloquent le montage.
 
 ## Ce que le DIY ne remplace pas
 
