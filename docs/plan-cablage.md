@@ -5,7 +5,7 @@ Deux parties :
 1. **Le câblage d'origine**, relevé fil par fil dans les schémas officiels (`upstream/fab/docs/Control Unit FAB.qet` et `VFD unit.qet`).
 2. **Ce que change cette version** : moteurs en boucle fermée, alimentation 48 V, coupure de puissance câblée, Makita à la place de la broche.
 
-La partie 1 est lue dans les schémas. La partie 2 est une proposition : elle contient des **décisions à prendre** et des points à confirmer sur les notices, listés à la fin. Rien de tout cela n'a été câblé ni essayé.
+La partie 1 est lue dans les schémas. La partie 2 est une proposition. Les choix faits sont expliqués en partie 3, et les points à confirmer sur les notices sont en partie 4. Rien de tout cela n'a été câblé ni essayé.
 
 > Le secteur 230 V est mortel. Si tu n'as pas l'habitude de câbler une armoire, fais relire la partie puissance par quelqu'un qui l'a.
 
@@ -120,6 +120,7 @@ flowchart LR
 - **Le 24 V reste hors contacteur** : après un arrêt d'urgence, le contrôleur, le Pi et les capteurs restent alimentés et la position est gardée.
 - **Auto-maintien du contacteur :** la bobine est alimentée à travers le contact NF n° 1 de l'arrêt d'urgence, puis le bouton marche (NO) en parallèle avec un contact auxiliaire NO du contacteur. Après une coupure, rien ne repart sans appui sur le bouton marche.
 - **Contact NF n° 2 de l'arrêt d'urgence :** vers l'entrée E-Stop du PlanetCNC, par le connecteur GX12 2 broches d'origine.
+- **Tout ce circuit de commande est en 24 V** : la bobine du contacteur est en 24 V CC, alimentée par le 24 V du boîtier.
 
 ### Drivers en boucle fermée
 
@@ -135,25 +136,40 @@ flowchart LR
 - **Rallonges codeur :** Y2 et Z ont des câbles moteur de 5,3 et 5,7 m ; prendre des rallonges de 5 m en plus des 1,7 m du kit. Les faire passer dans les chaînes avec les câbles moteur, blindage relié d'un seul côté, au boîtier.
 - **Alarme :** c'est le gain principal de la boucle fermée sur un portique à deux moteurs. Si un driver décroche, la machine s'arrête au lieu de se mettre en travers.
 
-### Makita et boîtier relais
+### Arrêt d'urgence et bouton marche
 
 | De | Vers |
 |---|---|
-| Sortie du contacteur (boîtier de commande) | entrée secteur du boîtier relais |
-| Entrée secteur du boîtier relais | contact du relais 25 A → prise 2P+T de la Makita |
-| GX12 « Commande VFD » broche 4 (OUT1) et broche 5 (+5 V) | module relais 5 V, comme l'original |
-| GX12 broche 1, libre dans l'original | **+24 V**, pour la bobine du relais 25 A |
-| GX12 broche 2 | masse commune |
-| Contact du module relais 5 V | coupe le +24 V de la bobine du relais 25 A |
+| +24 V | GX12 « Input 3 » broche 1 → contact NF n° 1 de l'arrêt d'urgence → broche 2 |
+| GX12 « Input 3 » broche 2 | bouton marche (NO), en parallèle avec le contact auxiliaire NO du contacteur |
+| Sortie du bouton marche | bobine du contacteur (A1) ; A2 au 0 V |
+| GX12 « E-Stop » broches 1 et 2 | contact NF n° 2 de l'arrêt d'urgence, comme l'original |
 
-La broche 3 (consigne 0-10 V) ne sert pas avec la Makita. Elle reste câblée pour le jour où la broche 2,2 kW remplace l'affleureuse.
+- Le connecteur « Input 3 » ne va donc plus à l'entrée IN3 du PlanetCNC : il sert à la boucle de la bobine. « Input 2 » reste libre.
+- Un seul câble de 4 conducteurs part du bouton d'arrêt d'urgence et se termine par deux fiches GX12 2 broches.
+- Le bouton marche est sur le boîtier de commande (perçage Ø22).
 
-## 3. Décisions à prendre
+### Makita
 
-1. **Tension de la bobine du contacteur.** Le budget prévoit une bobine 230 V. Le bouton d'arrêt d'urgence est déporté au bout d'un câble : avec une bobine 230 V, **ce câble et son connecteur portent le secteur**, et le GX12 2 broches d'origine n'est pas fait pour ça. Je recommande un contacteur à **bobine 24 V CC**, alimenté par le 24 V du boîtier : le câble de l'arrêt d'urgence reste en très basse tension. Même prix à peu près, référence à changer dans la BOM.
-2. **Connecteur de l'arrêt d'urgence.** Avec 2 contacts NF, il faut 4 conducteurs : soit un second GX12 2 broches (les connecteurs « Input 2 » et « Input 3 » sont libres), soit un GX12 4 broches à la place de celui d'origine.
-3. **Liaison de puissance vers le boîtier relais.** Le secteur commuté doit sortir du boîtier de commande : une embase de sortie (C13 de façade) ou un cordon par presse-étoupe. Aucune des deux n'est dans la BOM. L'autre solution est de mettre le relais 25 A et la prise de la Makita dans le boîtier de commande, et de se passer du boîtier relais tant qu'il n'y a pas de VFD.
-4. **Bouton marche :** sur le boîtier de commande ou à côté de l'arrêt d'urgence. Le second est plus pratique, mais ajoute 2 conducteurs au câble.
+Il n'y a pas de boîtier relais : tout est dans le boîtier de commande.
+
+| De | Vers |
+|---|---|
+| Sortie du contacteur, phase et neutre | contacts du relais 25 A → prise 2P+T de la Makita, sur la paroi du fond |
+| Terre | directement à la prise |
+| OUT1 et +5 V du PlanetCNC | module relais 5 V (entrée IN et alimentation), comme dans le boîtier VFD d'origine |
+| +24 V | contact du module relais 5 V → bobine du relais 25 A ; retour au 0 V |
+
+Les connecteurs « Commande VFD » et la carte PWM ne servent pas avec la Makita. Ils restent utiles le jour où la broche 2,2 kW et son variateur remplacent l'affleureuse : il faudra alors découper le boîtier VFD et le câbler comme l'original.
+
+## 3. Choix faits, et pourquoi
+
+1. **Contacteur à bobine 24 V CC**, et non 230 V. Le bouton d'arrêt d'urgence est déporté au bout d'un câble : avec une bobine 230 V, ce câble et son connecteur GX12 porteraient le secteur. En 24 V, rien de dangereux ne sort du boîtier par ce câble.
+2. **Arrêt d'urgence sur deux GX12 2 broches** déjà présents (« E-Stop » et « Input 3 »). Aucun connecteur à ajouter, seulement un câble de 4 conducteurs.
+3. **Relais et prise de la Makita dans le boîtier de commande.** Un boîtier relais séparé aurait demandé une liaison secteur entre les deux boîtiers, avec une embase de sortie en plus. On économise aussi les tôles du boîtier VFD (environ 70 € avec son embase), reportées au jour où il y aura un variateur.
+4. **Bouton marche sur le boîtier de commande.** Le mettre près de l'arrêt d'urgence serait un peu plus pratique, mais ajouterait 2 conducteurs et un boîtier de bouton.
+
+Ces choix sont dans `bom/chiffrage/lot-K-cablage.csv`. Pour revenir en arrière, il suffit de supprimer ce fichier et de relancer `python3 scripts/price_bom.py`.
 
 ## 4. À confirmer sur les notices
 

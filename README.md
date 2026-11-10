@@ -28,7 +28,7 @@ fab-diy/
 │       ├── diy/             Pièces redessinées : pattes de fixation des boîtiers (DXF + plan de pose)
 │       └── preview.png      Aperçu de tous les DXF
 ├── docs/
-│   ├── budget.md            Synthèse du chiffrage France (~7 290 € TTC), fournisseurs alternatifs, variantes, points à régler
+│   ├── budget.md            Synthèse du chiffrage France (~7 230 € TTC), fournisseurs alternatifs, variantes, points à régler
 │   ├── verifications.md     Mesures dans le STEP : rainures, cornières, crémaillère, axe Y en tronçons, comptages
 │   ├── profiles-coupe.md    Fiche de coupe et de taraudage des profilés, à joindre au devis
 │   ├── plan-cablage.md      Câblage d'origine relevé dans les schémas, modifications, décisions à prendre
@@ -72,12 +72,12 @@ python3 scripts/flatten_bom.py && python3 scripts/price_bom.py
 - [x] Récupérer les fichiers officiels (nomenclatures, STEP, schémas, notice)
 - [x] Liste d'achat aplatie avec catégories
 - [x] DXF des plaques acier + STEP des tôles pliées
-- [x] Chiffrer la liste d'achat pour la France : ~7 290 € TTC, voir `docs/budget.md`
+- [x] Chiffrer la liste d'achat pour la France : ~7 230 € TTC, voir `docs/budget.md`
 - [x] Goussets : 14, positions relevées dans le STEP (`docs/verifications.md`)
 - [ ] Profilés 30×60 de 1410 mm : 11 dans le STEP, 9 dans la nomenclature. Chiffré pour 11, à confirmer avec le guide de montage
 - [x] Pattes CU-VFD (M01379) absentes du STEP : redessinées d'après les cotes des boîtiers et des traverses, voir `docs/pieces-acier.md`
 - [x] Vérifier rainures, cornières et crémaillère dans le STEP : voir `docs/verifications.md`
-- [ ] Régler les points restants de `docs/budget.md`. Faits : vis X (1500 mm confirmés), poulie Y (5M 80 dents), implantation du boîtier. Plan de câblage rédigé (`docs/plan-cablage.md`, 4 décisions à prendre). Restent : arbres moteurs et brochage des poulies, fabrication du pignon-poulie, devis de port
+- [ ] Régler les points restants de `docs/budget.md`. Faits : vis X (1500 mm confirmés), poulie Y (5M 80 dents), implantation du boîtier. Plan de câblage rédigé (`docs/plan-cablage.md`, choix faits dans le lot K). Restent : arbres moteurs et brochage des poulies, fabrication du pignon-poulie, devis de port
 - [ ] Devis réel découpe laser et pliage (téléverser `cad/steel/`)
 - [ ] Profilés : devis coupe à longueur + taraudage M6 aux extrémités. Fiche prête : `docs/profiles-coupe.md`
 - [ ] Électronique : carte des fins de course. Redessinée, Gerber prêts (`docs/carte-fins-de-course.md`) ; à vérifier avec une embase en main, puis à faire fabriquer

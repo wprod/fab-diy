@@ -35,8 +35,8 @@ Pour faire le développé soi-même : atelier *SheetMetal* de FreeCAD (gratuit) 
 | M00278 | Cable chain holder | 3 mm | 4 | `fab/step/Cable_chain_support_02_v4_Component1_t3mm_x4.step` |
 | M00279 | Control Unit Base | 1,5 mm | 1 | `fab-cu/step/Fab_Control_Unit_Base_v50_Base_t1.5mm_x1.step` |
 | M00280 | Control Unit Cover | 1,5 mm | 1 | `fab-cu/step/Fab_Control_Unit_Cover_v14_Cover_t1.5mm_x1.step` |
-| M00355 | VFD Base | 1,5 mm | 1 | `vfd-cu/step/VFD_Enclosure_Base_v26_Base_t1.5mm_x1.step` |
-| M00356 | VFD Cover | 1,5 mm | 1 | `vfd-cu/step/VFD_Enclosure_Cover_v5_Cover_t1.5mm_x1.step` |
+| M00355 | VFD Base *(reportée, voir plus bas)* | 1,5 mm | 1 | `vfd-cu/step/VFD_Enclosure_Base_v26_Base_t1.5mm_x1.step` |
+| M00356 | VFD Cover *(reportée)* | 1,5 mm | 1 | `vfd-cu/step/VFD_Enclosure_Cover_v5_Cover_t1.5mm_x1.step` |
 
 ## À savoir avant de commander
 
@@ -57,7 +57,7 @@ Pour faire le développé soi-même : atelier *SheetMetal* de FreeCAD (gratuit) 
   - **8 mm :** 28 pièces, dont 14 goussets.
   - **10 mm :** 2 gantries, plus 6 plaques de pied si on ne les achète pas.
   - **3 mm :** 2 plaques plates + 4 pattes de boîtier + 4 pliées.
-  - **1,5 mm :** 4 capots pliés.
+  - **1,5 mm :** 2 capots pliés pour le boîtier de commande ; 2 de plus pour le boîtier VFD, reportés.
 
 ## Pattes des boîtiers (M01379)
 
@@ -98,4 +98,4 @@ Génération : `.venv/bin/python scripts/make_cu_bracket.py` (le script contrôl
 
 - La position des boîtiers est **déduite des cotes**, pas lue dans le guide de montage (support.mekanika.io n'est pas accessible depuis cette session). La coïncidence des deux entraxes laisse peu de doute, mais un coup d'œil au guide le confirmera.
 - Diamètre réel des pieds en caoutchouc achetés : s'ils dépassent Ø17, ils buteront contre la traverse. Les lumières laissent 1,75 mm.
-- Boîtier relais de la variante Makita : il reprend la tôle du boîtier VFD, donc les mêmes pattes.
+- **Boîtier VFD reporté :** avec la Makita, le relais et la prise sont dans le boîtier de commande ([plan-cablage.md](plan-cablage.md)). Les deux tôles du boîtier VFD ne sont pas à découper pour l'instant, et 2 pattes suffisent. En découper 4 quand même évite une seconde commande le jour où la broche arrive.
