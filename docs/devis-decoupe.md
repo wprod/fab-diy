@@ -26,7 +26,7 @@ Ne sont pas dans le dossier :
 
 ## Où demander
 
-Les découpeurs en ligne donnent un prix dès le téléversement des fichiers : Laserboost, Xometry, Fractory, ou John Steel et LaserHub. Un métallier ou un chaudronnier local est souvent moins cher pour un lot comme celui-ci, et il peut faire les taraudages. Demander au moins deux devis : la fourchette estimée va de 320 à 850 €.
+Les découpeurs en ligne donnent un prix dès le téléversement des fichiers : Laserboost, Xometry ou Fractory. Un métallier ou un chaudronnier local est souvent moins cher pour un lot comme celui-ci, et il peut faire les taraudages. Demander au moins deux devis : la fourchette estimée va de 320 à 850 €.
 
 ## Message à joindre
 
@@ -37,7 +37,7 @@ Les découpeurs en ligne donnent un prix dès le téléversement des fichiers : 
 > Le lot comprend 48 pièces en 17 références : 8 pièces en 10 mm, 28 en 8 mm, 10 en 3 mm et 2 en 1,5 mm. Les fichiers sont joints, rangés par épaisseur, avec la liste des quantités (liste-decoupe.csv).
 >
 > - Les plaques sont fournies en DXF à l'échelle 1, en millimètres.
-> - Cinq références sont des tôles pliées, fournies en STEP 3D : 4 supports en 3 mm (1 pli) et les 2 tôles d'un boîtier en 1,5 mm. Merci de me dire si vous faites le pliage, et le développé à partir du STEP.
+> - Trois références sont des tôles pliées, fournies en STEP 3D : un support en 3 mm à 1 pli (4 pièces) et les 2 tôles d'un boîtier en 1,5 mm. Merci de me dire si vous faites le pliage, et le développé à partir du STEP.
 > - Certains trous font moins que l'épaisseur de la tôle (Ø4,3 à Ø5,5 dans du 8 mm). Pouvez-vous les pointer au laser, ou les percer ?
 > - Quelques trous sont à tarauder (M5, M6, M12 : voir la colonne « reprises » de la liste). Merci de chiffrer cette option à part.
 > - Finition : brut, ébavuré. Merci de chiffrer en option un thermolaquage noir.
