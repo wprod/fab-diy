@@ -32,11 +32,7 @@ REWORK = {
     "Fab Control Unit": "tôle pliée : le développé est à calculer par le découpeur ; écrous à sertir M3 à poser",
     "Cable chain support": "tôle pliée, 1 pli",
 }
-EXTRA = [  # pièces redessinées, absentes des STEP officiels
-    {"name": "CU-VFD Mounting plate (redessinée)", "qty": 4, "kind": "flat", "thickness_mm": 3.0,
-     "flat_size_mm": "64.0 x 45.0", "file": STEEL / "diy" / "CU_VFD_Mounting_plate_DIY_t3mm_x4.dxf",
-     "rework": "2 suffisent sans boîtier VFD ; 4 pour ne pas recommander plus tard"},
-]
+EXTRA: list[dict] = []  # la patte de boîtier redessinée (cad/steel/diy) est facultative : hors devis
 
 
 def parts() -> list[dict]:

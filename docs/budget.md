@@ -21,12 +21,12 @@ Pour tout recalculer : `python3 scripts/price_bom.py`. Pour un chiffrage belge :
 
 | | Montant TTC |
 |---|---|
-| **Total chiffré, port compris** | **≈ 7 230 €** |
+| **Total chiffré, port compris** | **≈ 7 220 €** |
 | dont prix lus sur la page produit | 4 908 € (68 %) |
-| dont estimations | 2 319 € (acier découpé, sécurité électrique, articles AliExpress, port) |
-| Avec 10 % d'imprévus (fils, outillage, oublis) | ≈ 7 950 € |
-| Variante économique (voir plus bas) | ≈ 5 680 € |
-| Avec le kit broche 2,2 kW + VFD au lieu de la Makita | ≈ 7 450 € (boîtier VFD compris) |
+| dont estimations | 2 309 € (acier découpé, sécurité électrique, articles AliExpress, port) |
+| Avec 10 % d'imprévus (fils, outillage, oublis) | ≈ 7 940 € |
+| Variante économique (voir plus bas) | ≈ 5 670 € |
+| Avec le kit broche 2,2 kW + VFD au lieu de la Makita | ≈ 7 440 € (boîtier VFD compris) |
 | **Kit officiel Mekanika**, « Pack Fab dès 12 463 € HT » | ≈ 14 960 € TTC |
 
 **Ce qui a changé depuis le premier chiffrage (~7 530 €) :**
@@ -113,7 +113,7 @@ La revue finale a trouvé que la nomenclature n'avait **aucune coupure de puissa
 | Structure alu | 1 197 € | Profilés coupés et taraudés M6 chez Dold. 11 profilés 30×60 de 1410 mm, comme dans le STEP (la nomenclature en compte 9) |
 | Moteurs & électronique | 833 € | Kits en boucle fermée (NEMA 34 9 N·m ×3, NEMA 23), alimentations 72, 48 et 24 V, PlanetCNC (carte + licence 226 €), relais 25 A. Raspberry Pi déjà possédé |
 | Visserie & fixations | 729 € | Cornières et écrous coulissants chez Dold, vis chez TME et Motedis.fr |
-| Pièces acier découpées | 527 € | **Estimation**, fourchette ~320 à ~850 € selon le découpeur. Sans les tôles du boîtier VFD, reportées |
+| Pièces acier découpées | 517 € | **Estimation**, fourchette ~320 à ~850 € selon le découpeur. Sans les tôles du boîtier VFD, reportées |
 | Frais de port | 516 € | ~16 envois, dont 126 € chez DamenCNC (barres de 2 m, estimation prudente) et 52 € chez StepperOnline |
 | Câblage & connectique | 287 € | Prises et multiprise au standard français, rallonges codeur |
 | Gestion des câbles | 160 € | Chaînes, chemin de câbles, goulottes |
@@ -125,7 +125,7 @@ La revue finale a trouvé que la nomenclature n'avait **aucune coupure de puissa
 - Dold Mechatronik : ~2 600 €, en deux commandes (profilés via aluprofile-express.de, et mécanique : 2 crémaillères de 1 m, pignons, accouplements).
 - Sorotec : 887 € (rails, patins, paliers, port compris).
 - DamenCNC : ~810 € (2 crémaillères de 2 m, port compris).
-- Découpe laser : ~640 €.
+- Découpe laser : ~630 €.
 - AliExpress : ~430 €.
 - StepperOnline : 452 € (4 kits en boucle fermée, rallonges, port compris).
 - PlanetCNC : 240 € (carte Mk3/4, licence, port).
@@ -156,12 +156,12 @@ La revue finale a trouvé que la nomenclature n'avait **aucune coupure de puissa
 9. **Chaîne porte-câbles.** Chiffrée en 24×60 au lieu de 25×50 : vérifier les embouts face aux supports acier.
 10. **Acier.** Seul un vrai devis donnera le prix. Le dossier est prêt : zip, liste des pièces et message type dans [devis-decoupe.md](devis-decoupe.md). Les trous de Ø4,3 à 5,5 dans le 8 mm sont à faire pointer puis percer.
 11. **Boîtier de commande (tôles M00279/M00280).** Étudié dans [boitier-commande.md](boitier-commande.md) : le CL57T, l'alimentation LRS-350-48, le contacteur et le relais tiennent, **sans modifier les tôles avant la découpe**. Les perçages en plus se font à la main dans la tôle de 1,5 mm. Les dimensions des pièces ajoutées restent à confirmer sur leurs fiches, et le pont du rail DIN est à fabriquer.
-12. **Rails Y aboutés.** L'original achète des rails « docking », appairés pour être mis bout à bout. Faire confirmer par écrit à Sorotec des rails rectifiés en bout, marqués par paire, avec un pas de trous continu à la jonction. Sinon, il y aura une marche à chaque raccord.
+12. **Rails Y aboutés.** L'original achète des rails « docking », appairés pour être mis bout à bout. Le guide officiel le confirme : chaque rail a un bout à arête vive, qui sert à l'aboutage, et un bout ébavuré, par lequel on enfile les patins. Faire confirmer par écrit à Sorotec des rails rectifiés en bout, marqués par paire, avec un pas de trous continu à la jonction. Sinon, il y aura une marche à chaque raccord.
 13. ~~**Plan de câblage.**~~ **Rédigé** dans [plan-cablage.md](plan-cablage.md), choix faits (lot K) : contacteur à bobine 24 V CC, relais et prise de la Makita dans le boîtier de commande, bouton marche en façade, presse-étoupes pour les câbles codeur. Restent des points à confirmer sur les notices (palpeur en 5 V, sortie alarme des drivers, attribution des axes).
 14. **Fins de course :** la carte est redessinée, Gerber prêts ([carte-fins-de-course.md](carte-fins-de-course.md)). Elle est passive ; l'optocoupleur est un module séparé, à prendre en version 24 V. **Embases XLR 3 : NC3FAV et non NC3FAV1-0**, qui mettrait les signaux au châssis. Reste à vérifier le sens des embases avec une pièce en main avant de commander le circuit.
 15. **Alimentation 48 V :** son potentiomètre monte jusqu'à ~52,8 V. La laisser à 48 V au plus (limite du CL57T). Récupérer le lien exact du kit NEMA 23 avant de commander.
 16. ~~**Goussets.**~~ **Réglé :** 14, comme dans le modèle 3D. Les 14 positions sont relevées dans [verifications.md](verifications.md), section 5. La ligne est chiffrée pour 14.
-17. **Profilés 30×60 de 1410 mm :** 11 dans le modèle 3D, 9 dans la nomenclature. La ligne est chiffrée pour 11 (+62 €). À confirmer avec le guide de montage ou sur le Discord avant de commander : 2 profilés en trop coûtent peu, 2 en moins bloquent le montage.
+17. ~~**Profilés 30×60 de 1410 mm.**~~ **Réglé : 11.** Le guide de montage officiel en utilise 11 (6 traverses et 5 longerons), comme le modèle 3D. La nomenclature publiée, qui en compte 9, est en retard sur le guide ([verifications.md](verifications.md), section 9).
 
 ## Ce que le DIY ne remplace pas
 

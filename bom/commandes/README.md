@@ -7,7 +7,7 @@ Générées par `scripts/make_orders.py` à partir de [`fab-diy-bom.csv`](../fab
 | Dold Mechatronik (aluprofile-express.de) | 14 | 1693 € | 109 € | [`dold-mechatronik-aluprofile-express-de.csv`](dold-mechatronik-aluprofile-express-de.csv) |
 | DamenCNC (2 × 2 m) + Dold (2 × 1 m) | 1 | 1277 € | 0 € | [`damencnc-2-2-m-dold-2-1-m.csv`](damencnc-2-2-m-dold-2-1-m.csv) |
 | Sorotec (Blue Line) | 6 | 857 € | 0 € | [`sorotec-blue-line.csv`](sorotec-blue-line.csv) |
-| Découpe laser en ligne (Laserboost / Fractory / Xometry) - devis à faire | 17 | 572 € | 572 € | [`decoupe-laser-en-ligne-laserboost-fractory-xometry-devis-a-f.csv`](decoupe-laser-en-ligne-laserboost-fractory-xometry-devis-a-f.csv) |
+| Découpe laser en ligne (Laserboost / Fractory / Xometry) - devis à faire | 16 | 562 € | 562 € | [`decoupe-laser-en-ligne-laserboost-fractory-xometry-devis-a-f.csv`](decoupe-laser-en-ligne-laserboost-fractory-xometry-devis-a-f.csv) |
 | StepperOnline (entrepôt DE) | 4 | 452 € | 100 € | [`stepperonline-entrepot-de.csv`](stepperonline-entrepot-de.csv) |
 | AliExpress | 22 | 275 € | 275 € | [`aliexpress.csv`](aliexpress.csv) |
 | PlanetCNC (planet-cnc.com) | 3 | 240 € | 15 € | [`planetcnc-planet-cnc-com.csv`](planetcnc-planet-cnc-com.csv) |
@@ -36,4 +36,4 @@ Générées par `scripts/make_orders.py` à partir de [`fab-diy-bom.csv`](../fab
 | JLCPCB | 2 | 10 € | 10 € | [`jlcpcb.csv`](jlcpcb.csv) |
 | Reichelt / Kubii | 1 | 6 € | 6 € | [`reichelt-kubii.csv`](reichelt-kubii.csv) |
 | Impression 3D maison (filament PETG) | 1 | 3 € | 3 € | [`impression-3d-maison-filament-petg.csv`](impression-3d-maison-filament-petg.csv) |
-| **Total** | | **7227 €** | | |
+| **Total** | | **7217 €** | | |
