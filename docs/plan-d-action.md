@@ -27,6 +27,15 @@ Ces devis portent sur environ 2 000 € d'estimations : ils décident si le budg
 1. **6 embases XLR Neutrik NC3FAV** : vérifier leur sens, puis commander le circuit imprimé des fins de course ([carte-fins-de-course.md](carte-fins-de-course.md)).
 2. **Le support Ø65 de la Makita** : mesurer ses trous, à percer dans la plaque porte-broche.
 
+### À prévoir en plus, hors BOM
+
+La BOM s'arrête à la machine. Pour s'en servir, il faut aussi :
+
+- **un écran HDMI, un clavier et une souris** pour le Raspberry Pi. Le kit officiel propose en option un pavé Bluetooth et un écran tactile ; n'importe quel écran et clavier font l'affaire ;
+- **des fraises** à queue de 6 ou 8 mm pour la Makita, dont une fraise à surfacer pour dresser le martyr ;
+- **des brides de serrage** (les inserts M8 du martyr sont comptés, pas les brides) ;
+- **une aspiration** et des protections : lunettes, casque antibruit, masque à poussières.
+
 ## Étape 4 : les grosses commandes
 
 À passer une fois les devis de l'étape 2 reçus. Par ordre de montant :
@@ -64,4 +73,4 @@ Suivre le guide officiel Mekanika (support.mekanika.io), avec [notes-de-montage.
 
 ## Étape 7 : logiciel et premier essai
 
-Importer le profil PlanetCNC de Mekanika, puis suivre [reglages-planetcnc.md](reglages-planetcnc.md) : ce qu'il faut adapter, et l'ordre des vérifications avant la première prise d'origine.
+Installer PlanetCNC sur le Raspberry Pi 5 (l'image de Mekanika est prévue pour le Pi 4B : deux voies sont décrites), importer le profil de Mekanika, puis suivre [reglages-planetcnc.md](reglages-planetcnc.md) : ce qu'il faut adapter, et l'ordre des vérifications avant la première prise d'origine.
