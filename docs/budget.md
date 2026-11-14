@@ -94,13 +94,13 @@ La commande reste **PlanetCNC Mk3/4 + licence sur le Raspberry Pi 5**, comme l'o
 - Les kits n'ont que 1,7 m de câble codeur : 4 rallonges sont comptées (~48 €, estimation). Les prendre prévues pour chaîne porte-câbles.
 - Relier la sortie alarme des 4 drivers à une entrée du contrôleur PlanetCNC, pour arrêter la machine dès qu'un driver signale une erreur de suivi. C'est le vrai gain de la boucle fermée sur un portique à deux moteurs. Nombre d'entrées libres sur la Mk3/4 à vérifier.
 - grblHAL (carte Flexi-HAL, ~171 €) a été étudié puis écarté : il aurait fallu changer les capteurs, la carte des fins de course, le relais et redessiner le boîtier.
-- Le MDF 18 mm des enseignes couvre 1220 des 1250 mm de course X. Pour tout couvrir : MDF 19 mm en 2800×2070 chez un négoce bois, sur devis.
+- Le MDF 18 mm des enseignes couvre 1220 des 1330 mm de course X. Pour tout couvrir : MDF 19 mm en 2800×2070 chez un négoce bois, sur devis.
 
 ## Sécurité électrique (lot J)
 
 La revue finale a trouvé que la nomenclature n'avait **aucune coupure de puissance câblée**. L'arrêt d'urgence allait seulement au contrôleur : il dépendait du logiciel, ce qui n'est pas une sécurité. Chaîne retenue :
 
-`C14 + fusible → disjoncteur 15 A → contacteur 25 A (bobine 24 V CC, auto-maintien) → alimentations 72 V et 48 V, relais Makita (et plus tard VFD)`
+`C14 + fusible 10 A → interrupteur → disjoncteur 15 A → contacteur 25 A (bobine 24 V CC, auto-maintien) → alimentations 72 V et 48 V, relais Makita (et plus tard VFD)`
 
 - **Arrêt d'urgence Schneider XB5 à 2 contacts NF :** le premier coupe la bobine du contacteur, le second va à l'entrée arrêt d'urgence de PlanetCNC.
 - **Bouton marche vert :** après un arrêt d'urgence ou une coupure secteur, rien ne redémarre seul.

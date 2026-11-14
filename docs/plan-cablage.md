@@ -105,7 +105,7 @@ IN4 est libre. Le PlanetCNC est relié au Raspberry Pi par son port USB-B.
 
 ```mermaid
 flowchart LR
-  C14[C14 + fusible] --> DJ[Disjoncteur 15 A]
+  C14[C14 + fusible 10 A] --> SW[Interrupteur] --> DJ[Disjoncteur 15 A]
   DJ --> A24[Alimentation 24 V]
   DJ --> K[Contacteur 25 A]
   K --> A72[Alimentation 72 V]
@@ -117,6 +117,7 @@ flowchart LR
   A48 --> D57[Driver CL57T : Z]
 ```
 
+- **Tout passe par l'embase C14 et son fusible de 10 A**, Makita comprise (environ 3 A). C'est ce fusible qui fixe la limite : le disjoncteur de 15 A, placé derrière, n'ajoute pas de protection, il sert de coupure réarmable. L'interrupteur d'origine reste en tête.
 - **Le 24 V reste hors contacteur** : après un arrêt d'urgence, le contrôleur, le Pi et les capteurs restent alimentés et la position est gardée.
 - **Auto-maintien du contacteur :** la bobine est alimentée à travers le contact NF n° 1 de l'arrêt d'urgence, puis le bouton marche (NO) en parallèle avec un contact auxiliaire NO du contacteur. Après une coupure, rien ne repart sans appui sur le bouton marche.
 - **Contact NF n° 2 de l'arrêt d'urgence :** vers l'entrée E-Stop du PlanetCNC, par le connecteur GX12 2 broches d'origine.
@@ -133,7 +134,7 @@ flowchart LR
 | Codeurs | câble du kit + rallonge, jusqu'au bornier codeur de chaque driver, par presse-étoupe (voir [boitier-commande.md](boitier-commande.md)) |
 | Alarmes | les 4 sorties ALM en parallèle sur **IN4**, retour au GND |
 
-- **Rallonges codeur :** Y2 et Z ont des câbles moteur de 5,3 et 5,7 m ; prendre des rallonges de 5 m en plus des 1,7 m du kit. Les faire passer dans les chaînes avec les câbles moteur, blindage relié d'un seul côté, au boîtier.
+- **Rallonges codeur :** les 4 axes en ont besoin, le câble du kit ne faisant que 1,7 m. X et Y1 ont des câbles moteur de 3,4 m : une rallonge de 3 m suffit. Y2 et Z ont des câbles de 5,3 et 5,7 m : prendre des rallonges de 5 m. Les faire passer dans les chaînes avec les câbles moteur, blindage relié d'un seul côté, au boîtier.
 - **Alarme :** c'est le gain principal de la boucle fermée sur un portique à deux moteurs. Si un driver décroche, la machine s'arrête au lieu de se mettre en travers.
 
 ### Arrêt d'urgence et bouton marche
