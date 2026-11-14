@@ -39,7 +39,7 @@ Ces devis portent sur environ 2 000 € d'estimations : ils décident si le budg
 | Acier découpé | ~570 € estimés | devis retenu |
 | Moteurs et drivers, StepperOnline | ~450 € | lien exact du kit NEMA 23 ; stock |
 | Contrôleur et licence, PlanetCNC | ~240 € | — |
-| Vis à billes X et Z, AliExpress | ~127 € estimés | celle de X en **1500 mm hors tout**, pas 1450 ([verifications.md](verifications.md), section 6) |
+| Vis à billes X et Z et autres pièces, AliExpress (entrepôt UE) | ~127 € estimés pour 8 articles | celle de X en **1500 mm hors tout**, pas 1450 ([verifications.md](verifications.md), section 6) |
 
 Le reste (visserie, électricité, câbles) représente une quinzaine de petites commandes.
 
