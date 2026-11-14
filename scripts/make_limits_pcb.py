@@ -266,6 +266,14 @@ def drill(path: Path) -> None:
     path.write_text("\n".join(out) + "\n")
 
 
+def zip_write(z: zipfile.ZipFile, path: Path, name: str) -> None:
+    """Ajoute un fichier avec une date fixe, pour que le zip soit identique d'une exécution à l'autre."""
+    info = zipfile.ZipInfo(name, date_time=(2026, 1, 1, 0, 0, 0))
+    info.compress_type = zipfile.ZIP_DEFLATED
+    info.external_attr = 0o644 << 16
+    z.writestr(info, path.read_bytes())
+
+
 def preview(path: Path) -> bool:
     try:
         import matplotlib
@@ -330,7 +338,7 @@ def main() -> None:
     files.append(f)
     with zipfile.ZipFile(OUT / f"{NAME}-gerber.zip", "w", zipfile.ZIP_DEFLATED) as z:
         for f in files:
-            z.write(f, f.name)
+            zip_write(z, f, f.name)
     done = preview(OUT / "apercu.png")
     print(f"Carte {u1 - u0:.1f} x {v1 - v0:.1f} mm, {len(pads)} trous, isolement mini {worst:.2f} mm")
     print(f"{len(files)} fichiers + zip dans {OUT.relative_to(ROOT)}" + ("" if done else " (aperçu non généré : matplotlib absent)"))

@@ -41,6 +41,8 @@ Pour tout recalculer : `python3 scripts/price_bom.py`. Pour un chiffrage belge :
 | Visserie chez TME et Motedis.fr au lieu de Wegertseder (lot H) | ≈ −90 € |
 | Moteurs en boucle fermée et martyr (lot I) | ≈ +288 € |
 | Revue finale : arrêt d'urgence câblé, relais 25 A, poulies clavetées (lot J) | ≈ +181 € |
+| Choix de câblage : boîtier VFD reporté, pattes retirées, 4e sachet de chaîne (lot K) | ≈ −84 € |
+| Quantités corrigées d'après le modèle 3D : 11 profilés 30×60 au lieu de 9, 14 goussets au lieu de 12 | ≈ +79 € |
 
 ## Matériel déjà possédé
 
@@ -125,12 +127,12 @@ La revue finale a trouvé que la nomenclature n'avait **aucune coupure de puissa
 - Dold Mechatronik : ~2 600 €, en deux commandes (profilés via aluprofile-express.de, et mécanique : 2 crémaillères de 1 m, pignons, accouplements).
 - Sorotec : 887 € (rails, patins, paliers, port compris).
 - DamenCNC : ~810 € (2 crémaillères de 2 m, port compris).
-- Découpe laser : ~630 €.
+- Découpe laser : ~590 € (acier, plaques de pied et port estimé).
 - AliExpress : ~430 €.
 - StepperOnline : 452 € (4 kits en boucle fermée, rallonges, port compris).
 - PlanetCNC : 240 € (carte Mk3/4, licence, port).
-- Motedis.fr : 235 €.
-- Reichelt : 207 €.
+- Motedis : 255 € (visserie sur motedis.fr, chaînes porte-câbles et pieds).
+- Reichelt : ~195 €.
 - Matériel électrique de sécurité (Reichelt, RS ou Conrad) : ~143 € (contacteur, relais 25 A, arrêt d'urgence XB5, bouton marche, rail DIN).
 - TME : 156 €.
 

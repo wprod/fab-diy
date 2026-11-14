@@ -22,7 +22,7 @@ La **nuance d'acier n'est pas indiquée** dans le dépôt (S235 par défaut, à 
 | M00359 | Z-axis Top Motor Plate | Fab XL - X_Motor Z v1 | 8 mm | 1 | 160 × 73 | `fab/dxf/Fab_XL_X_Motor_Z_v1_t8mm_x1.dxf` |
 | M00358 | Z-Axis Bottom Bearing Plate | Fab XL - X_Bearing Z v1 | 8 mm | 1 | 130 × 65 | `fab/dxf/Fab_XL_X_Bearing_Z_v1_t8mm_x1.dxf` |
 | — | *(absente de la BOM)* support de broche | Spindle plate | 8 mm | 1 | 118 × 110 | `fab/dxf/Spindle_plate_t8mm_x1.dxf` |
-| M00488 | End connection plate 30x60 *(pièce achetée)* | Foot Plate 3060 M6 v2 | 10 mm | 6 | 60 × 30 | `fab/dxf/Foot_Plate_3060_M6_v2_t10mm_x6.dxf` |
+| M00488 | End connection plate 30x60 *(achetée par Mekanika, découpée ici)* | Foot Plate 3060 M6 v2 | 10 mm | 6 | 60 × 30 | `fab/dxf/Foot_Plate_3060_M6_v2_t10mm_x6.dxf` |
 | M01379 | CU-VFD Mounting plate *(facultative, redessinée : voir plus bas)* | — | 3 mm | 0 à 4 | 64 × 45 | `diy/CU_VFD_Mounting_plate_DIY_t3mm_x4.dxf` |
 
 ## Tôles pliées (STEP 3D à envoyer tel quel)
@@ -55,7 +55,7 @@ Pour faire le développé soi-même : atelier *SheetMetal* de FreeCAD (gratuit) 
 - **Petits trous dans les plaques épaisses :** en découpe laser, on vise un Ø au moins égal à l'épaisseur. Les Ø4,3 et Ø4,5 dans de l'acier de 8 mm sont à faire **pointer au laser puis percer**, ou à percer soi-même. Demander au découpeur.
 - **Regroupement par épaisseur** (utile pour les devis) :
   - **8 mm :** 28 pièces, dont 14 goussets.
-  - **10 mm :** 2 gantries, plus 6 plaques de pied si on ne les achète pas.
+  - **10 mm :** 2 gantries et 6 plaques de pied.
   - **3 mm :** 2 plaques plates + 4 pliées.
   - **1,5 mm :** 2 capots pliés pour le boîtier de commande ; 2 de plus pour le boîtier VFD, reportés.
 

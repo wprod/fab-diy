@@ -45,7 +45,7 @@ La BOM s'arrête à la machine. Pour s'en servir, il faut aussi :
 | Profilés et accessoires, Dold (aluprofile-express.de) | ~1 690 € | [profiles-coupe.md](profiles-coupe.md) |
 | Crémaillères, DamenCNC et Dold | ~1 400 € port compris | devis de port |
 | Rails, patins et paliers, Sorotec | ~890 € | confirmation des rails aboutés |
-| Acier découpé | ~570 € estimés | devis retenu |
+| Acier découpé | ~590 € estimés, port compris | devis retenu |
 | Moteurs et drivers, StepperOnline | ~450 € | lien exact du kit NEMA 23 ; stock |
 | Contrôleur et licence, PlanetCNC | ~240 € | — |
 | Vis à billes X et Z et autres pièces, AliExpress (entrepôt UE) | ~127 € estimés pour 8 articles | celle de X en **1500 mm hors tout**, pas 1450 ([verifications.md](verifications.md), section 6) |

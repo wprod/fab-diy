@@ -3,7 +3,8 @@
 Construire soi-même une CNC grand format à partir des fichiers open source de la
 **[Mekanika Fab](https://www.mekanika.io/fr/products/fab)** : surface de travail 1330 × 2700 mm,
 rails HGR20, vis à billes sur X et Z, double crémaillère module 2 sur Y,
-NEMA34 6 A, contrôleur PlanetCNC, broche 2,2 kW.
+NEMA34, contrôleur PlanetCNC, broche 2,2 kW.
+Cette version s'écarte de l'original sur trois points : moteurs en boucle fermée, affleureuse Makita en attendant la broche, arrêt d'urgence câblé.
 
 - Dépôt officiel : <https://github.com/mekanika-dev/fab>
 - Guide de montage : <https://support.mekanika.io/products/fab-cnc>
@@ -16,8 +17,8 @@ NEMA34 6 A, contrôleur PlanetCNC, broche 2,2 kW.
 fab-diy/
 ├── bom/
 │   ├── commandes/           Listes de commande par fournisseur (générées)
-│   ├── fab-diy-bom.csv      Liste d'achat chiffrée : 191 lignes + port, fournisseur, lien, prix TTC
-│   └── chiffrage/           Recherche de prix par lot (A structure, B guidage, C électronique, D visserie/acier)
+│   ├── fab-diy-bom.csv      Liste d'achat chiffrée : 191 lignes d'origine + ajouts et port, fournisseur, lien, prix TTC
+│   └── chiffrage/           Recherche de prix par lots A à K, appliqués dans l'ordre (détail dans docs/budget.md)
 ├── cad/
 │   ├── source/              STEP officiels (Git LFS, ~280 Mo, non versionnés)
 │   ├── pcb-fins-de-course/  Carte des fins de course : Gerber, perçage, aperçu
@@ -74,6 +75,11 @@ python3 scripts/flatten_bom.py && python3 scripts/price_bom.py && python3 script
 .venv/bin/python scripts/extract_steel.py "cad/source/FAB-CU V1.0.stp" cad/steel/fab-cu
 .venv/bin/python scripts/extract_steel.py "cad/source/VFD-CU V1.2.stp" cad/steel/vfd-cu
 .venv/bin/python scripts/preview_dxf.py cad/steel cad/steel/preview.png
+
+# 5. Pièces redessinées et dossiers à envoyer
+.venv/bin/python scripts/make_limits_pcb.py    # carte des fins de course : Gerber, perçage, aperçu
+.venv/bin/python scripts/make_cu_bracket.py    # patte de boîtier facultative : DXF, plan de pose
+python3 scripts/make_laser_quote.py            # dossier de devis laser : liste et zip
 ```
 
 ## Feuille de route
@@ -99,7 +105,8 @@ python3 scripts/flatten_bom.py && python3 scripts/price_bom.py && python3 script
 
 ## Points ouverts
 
-- **La broche n'est pas dans la nomenclature.** Seul le variateur y figure ; trois lignes ont été ajoutées à la main dans la BOM (broche, pinces ER20, support).
+- **La broche est remplacée par une affleureuse Makita** déjà possédée, sur un support Ø65. La broche 2,2 kW et son variateur restent l'évolution prévue ; les tôles du boîtier VFD sont reportées à ce moment-là.
+- **Le châssis suit l'ancienne version**, celle du modèle 3D publié. Le guide de montage en ligne décrit la nouvelle : les écarts sont listés dans `docs/notes-de-montage.md`.
 - **Carte des fins de course :** Mekanika ne publie que le schéma. La carte est redessinée dans `cad/pcb-fins-de-course/`, mais elle n'a pas encore été fabriquée ni essayée.
 - **PlanetCNC n'est pas libre.** Le contrôleur Mk3/4 et sa licence sont à acheter chez PlanetCNC. Le projet le garde, comme l'original : grblHAL a été étudié puis écarté (voir `docs/budget.md`).
 

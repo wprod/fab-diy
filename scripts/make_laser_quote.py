@@ -35,6 +35,14 @@ REWORK = {
 EXTRA: list[dict] = []  # la patte de boîtier redessinée (cad/steel/diy) est facultative : hors devis
 
 
+def zip_write(z: zipfile.ZipFile, path: Path, name: str) -> None:
+    """Ajoute un fichier avec une date fixe, pour que le zip soit identique d'une exécution à l'autre."""
+    info = zipfile.ZipInfo(name, date_time=(2026, 1, 1, 0, 0, 0))
+    info.compress_type = zipfile.ZIP_DEFLATED
+    info.external_attr = 0o644 << 16
+    z.writestr(info, path.read_bytes())
+
+
 def parts() -> list[dict]:
     rows = []
     for asm in ASSEMBLIES:
@@ -63,9 +71,9 @@ def main() -> None:
                         "plaque (DXF)" if r["kind"] == "flat" else "tôle pliée (STEP)",
                         r["flat_size_mm"], r["rework"]])
     with zipfile.ZipFile(OUT / "fab-diy-decoupe-laser.zip", "w", zipfile.ZIP_DEFLATED) as z:
-        z.write(listing, listing.name)
+        zip_write(z, listing, listing.name)
         for r in rows:
-            z.write(r["file"], f"{r['thickness_mm']:g}mm/{r['file'].name}")
+            zip_write(z, r["file"], f"{r['thickness_mm']:g}mm/{r['file'].name}")
     by_t: dict[float, list[int]] = {}
     for r in rows:
         by_t.setdefault(r["thickness_mm"], [0, 0])
