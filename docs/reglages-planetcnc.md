@@ -9,6 +9,19 @@ Cette page résume celui de la Fab Z250 et dit ce qu'il faut adapter pour cette 
 
 **Le plus simple :** importer ce profil dans PlanetCNC, activer ta propre licence, puis corriger les quelques points de la dernière section.
 
+## Installer le logiciel sur le Raspberry Pi 5
+
+Mekanika publie aussi une image toute prête pour la carte SD (« Raspberry Pi Mekanika Image v4.2 »). Ses notes de version précisent qu'elle est faite pour le **Raspberry Pi 4B** (système Trixie, Debian 13, 64 bits). Ce projet utilise un Pi 5 : rien ne garantit qu'elle y démarre.
+
+| Voie | Avantage | Limite |
+|---|---|---|
+| 1. Essayer l'image Mekanika sur le Pi 5 | tout est déjà installé et réglé | prévue pour le Pi 4B ; à essayer, sans garantie |
+| 2. Raspberry Pi OS 64 bits, puis PlanetCNC TNG pour Pi 5, puis import du profil | fonctionne sur le Pi 5 | l'installation est à faire soi-même ; le profil appelle des scripts Python dont le chemin (`/usr/local/lib/libpython3.11.so.1.0`) peut être à corriger |
+
+Commencer par la voie 1 : elle ne coûte qu'une carte SD à écrire. Si le Pi 5 ne démarre pas dessus, passer à la voie 2.
+
+Dans les deux cas, il faut PlanetCNC du 24 novembre 2025 ou plus récent, et ta propre licence.
+
 ## Quel connecteur pilote quel axe
 
 C'était la dernière question ouverte du plan de câblage.
@@ -20,7 +33,7 @@ C'était la dernière question ouverte du plan de câblage.
 | Axis 3 | **Z** | oui |
 | Axis 4 | **Y** (moteur Y2, esclave) | non |
 
-Les sorties 2 et 4 pilotent toutes deux l'axe Y : c'est le réglage du profil. Que la sortie 2 soit Y1 et la 4 Y2 se déduit des fins de course (Y1 sur l'entrée 2, Y2 sur l'entrée 4) ; le schéma ne le dit pas noir sur blanc. Si la mise d'équerre du portique bouge le mauvais côté, il suffit d'échanger les deux fiches moteur Y.
+Les sorties 2 et 4 pilotent toutes deux l'axe Y : c'est le réglage du profil, et les notes de version de Mekanika parlent bien des « sorties d'axe 2 et 4 » pour la mise d'équerre du portique. Que la sortie 2 soit Y1 et la 4 Y2 se déduit des fins de course (Y1 sur l'entrée 2, Y2 sur l'entrée 4) ; le schéma ne le dit pas noir sur blanc. Si la mise d'équerre du portique bouge le mauvais côté, il suffit d'échanger les deux fiches moteur Y.
 
 ## Pas par millimètre : les drivers à 6400 impulsions par tour
 
