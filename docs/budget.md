@@ -21,12 +21,12 @@ Pour tout recalculer : `python3 scripts/price_bom.py`. Pour un chiffrage belge :
 
 | | Montant TTC |
 |---|---|
-| **Total chiffré, port compris** | **≈ 7 220 €** |
-| dont prix lus sur la page produit | 4 908 € (68 %) |
-| dont estimations | 2 309 € (acier découpé, sécurité électrique, articles AliExpress, port) |
-| Avec 10 % d'imprévus (fils, outillage, oublis) | ≈ 7 940 € |
-| Variante économique (voir plus bas) | ≈ 5 670 € |
-| Avec le kit broche 2,2 kW + VFD au lieu de la Makita | ≈ 7 440 € (boîtier VFD compris) |
+| **Total chiffré, port compris** | **≈ 7 210 €** |
+| dont prix lus sur la page produit | 4 927 € (68 %) |
+| dont estimations | 2 278 € (acier découpé, sécurité électrique, articles AliExpress, port) |
+| Avec 10 % d'imprévus (fils, outillage, oublis) | ≈ 7 930 € |
+| Variante économique (voir plus bas) | ≈ 5 660 € |
+| Avec le kit broche 2,2 kW + VFD au lieu de la Makita | ≈ 7 430 € (boîtier VFD compris) |
 | **Kit officiel Mekanika**, « Pack Fab dès 12 463 € HT » | ≈ 14 960 € TTC |
 
 **Ce qui a changé depuis le premier chiffrage (~7 530 €) :**
@@ -116,10 +116,10 @@ La revue finale a trouvé que la nomenclature n'avait **aucune coupure de puissa
 | Pièces acier découpées | 517 € | **Estimation**, fourchette ~320 à ~850 € selon le découpeur. Sans les tôles du boîtier VFD, reportées |
 | Frais de port | 516 € | ~16 envois, dont 126 € chez DamenCNC (barres de 2 m, estimation prudente) et 52 € chez StepperOnline |
 | Câblage & connectique | 287 € | Prises et multiprise au standard français, rallonges codeur |
-| Gestion des câbles | 160 € | Chaînes, chemin de câbles, goulottes |
+| Gestion des câbles | 179 € | Chaînes, chemin de câbles, goulottes |
 | Capteurs & sécurité | 157 € | 6 inductifs M12 PNP, palpeur, arrêt d'urgence 2 NF, contacteur de puissance, bouton marche |
 | Broche | 20 € | Makita déjà possédée : seulement le support Ø65 |
-| Martyr, gabarits, impression 3D, divers | 183 € | Dont martyr MDF et inserts acier : 135 € |
+| Martyr, gabarits, impression 3D, divers | 151 € | Dont martyr MDF et inserts acier : 135 € |
 
 **Fournisseurs principaux :**
 - Dold Mechatronik : ~2 600 €, en deux commandes (profilés via aluprofile-express.de, et mécanique : 2 crémaillères de 1 m, pignons, accouplements).
@@ -145,7 +145,7 @@ La revue finale a trouvé que la nomenclature n'avait **aucune coupure de puissa
 
 1. **Arbres moteurs.** Les NEMA 34 en boucle fermée (34HS46-6004D-E1000, 9 N·m) ont un arbre Ø14 mm claveté au lieu de 12,7, et le NEMA 23 un arbre Ø8 au lieu de 6,35. **Lot J :** les 2 poulies Y sont à faire brocher (clavette 5 mm DIN 6885) et l'accouplement X passe à moyeux serrants. Trouver l'atelier de brochage, ou une poulie vendue clavetée.
 2. ~~**NEMA23 à 72 V.**~~ **Réglé :** le driver CL57T a sa propre alimentation 48 V. **Stock :** il ne restait que 2 kits NEMA 23 à l'entrepôt allemand le 8 novembre.
-3. **Pignon-poulie de l'axe Y.** Fiche pour l'atelier dans [pignon-poulie.md](pignon-poulie.md), avec toutes les cotes relevées dans le STEP (pignon M2 de 15 dents, poulie HTD-5M de 80 dents, logements de roulements). Le STEP et la nomenclature ne donnent pas le même roulement côté pignon. C'est une pièce spéciale Mekanika, introuvable toute faite, et Mekanika ne publie pas le prix de ses pièces détachées. Chiffrée en pignon M2 Z15 (Dold) + poulie HTD-5M 80T (AliExpress) + assemblage en atelier, ~70 € l'ensemble, non trempé.
+3. **Pignon-poulie de l'axe Y.** Fiche pour l'atelier dans [pignon-poulie.md](pignon-poulie.md) : denture et poulie mesurées dans le STEP (M2 de 15 dents, HTD-5M de 80 dents), alésages de la version v2 déduits de l'empilage décrit dans le guide officiel. À faire valider par l'atelier.
 4. **Vis à billes X de 1500 mm.** Beaucoup de vendeurs plafonnent à 1450 mm. **Vérifié dans le STEP : il faut bien 1500 mm hors tout**, une 1450 n'atteint pas le palier libre ([verifications.md](verifications.md), section 6). L'écrou SFS1620 doit faire Ø28 pour entrer dans le boîtier DSG16H.
 5. ~~**Rainure du 60×60.**~~ **Vérifié** ([verifications.md](verifications.md)) : tout est en rainure 6, et les crémaillères Dold et Gambini sont identiques à celle du STEP.
 6. **Licence PlanetCNC.** Elle est vendue à part, incluse dans les 240 €. Sans elle, la carte est limitée à 25 lignes de G-code. **TVA StepperOnline :** le panier n'ajoute aucune ligne de TVA depuis l'entrepôt allemand ; les prix sont lus comme TTC, à confirmer au paiement.
@@ -153,7 +153,7 @@ La revue finale a trouvé que la nomenclature n'avait **aucune coupure de puissa
    - Ruptures de stock chez TME : DIN 912 M4×45 et ISO 7379 M10×50 (prix estimés). La M4×55 n'existe que par 200, à 26 €.
    - ISO 7380 M3×4 : uniquement en inox A2. Ça suffit pour les vis de capot des boîtiers.
 8. **Port DamenCNC** pour des barres de 2 m : estimé à 126 €, non publié. **Demander un devis de port** avant de commander.
-9. **Chaîne porte-câbles.** Chiffrée en 24×60 au lieu de 25×50 : vérifier les embouts face aux supports acier.
+9. **Chaîne porte-câbles.** Chiffrée en 24×60 au lieu de 25×50 : vérifier les embouts face aux supports acier. Le guide officiel monte la chaîne Y en **1900 mm** (1500 + 400), et non 1800 : un 4e sachet de 1 m est ajouté.
 10. **Acier.** Seul un vrai devis donnera le prix. Le dossier est prêt : zip, liste des pièces et message type dans [devis-decoupe.md](devis-decoupe.md). Les trous de Ø4,3 à 5,5 dans le 8 mm sont à faire pointer puis percer.
 11. **Boîtier de commande (tôles M00279/M00280).** Étudié dans [boitier-commande.md](boitier-commande.md) : le CL57T, l'alimentation LRS-350-48, le contacteur et le relais tiennent, **sans modifier les tôles avant la découpe**. Les perçages en plus se font à la main dans la tôle de 1,5 mm. Les dimensions des pièces ajoutées restent à confirmer sur leurs fiches, et le pont du rail DIN est à fabriquer.
 12. **Rails Y aboutés.** L'original achète des rails « docking », appairés pour être mis bout à bout. Le guide officiel le confirme : chaque rail a un bout à arête vive, qui sert à l'aboutage, et un bout ébavuré, par lequel on enfile les patins. Faire confirmer par écrit à Sorotec des rails rectifiés en bout, marqués par paire, avec un pas de trous continu à la jonction. Sinon, il y aura une marche à chaque raccord.
