@@ -25,6 +25,8 @@ from pathlib import Path
 
 import ezdxf
 
+ezdxf.options.write_fixed_meta_data_for_testing = True  # DXF identique d'une exécution à l'autre
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "cad" / "steel" / "diy"
 NAME = "CU_VFD_Mounting_plate_DIY_t3mm_x4"
@@ -68,7 +70,14 @@ def write_dxf(path: Path) -> None:
     msp.add_circle((0, 0), M4 / 2)
     for a in SLOTS_A:
         msp.add_lwpolyline(slot(a, SLOT_B, SLOT_LEN, SLOT_W), format="xyb", close=True)
-    doc.saveas(path)
+    # ezdxf n'écrit pas toujours ses classes dans le même ordre : on ne remplace le
+    # fichier que si son contenu a vraiment changé, pour ne pas polluer git.
+    tmp = path.with_suffix(".tmp")
+    doc.saveas(tmp)
+    if path.exists() and sorted(path.read_text().splitlines()) == sorted(tmp.read_text().splitlines()):
+        tmp.unlink()
+    else:
+        tmp.replace(path)
 
 
 def check() -> None:
