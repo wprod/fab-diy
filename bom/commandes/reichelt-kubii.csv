@@ -1,0 +1,2 @@
+ref_mekanika,designation,produit,quantite_achat,prix_unitaire_ttc_eur,total_ttc_eur,confiance,lien,notes
+,Ventilateur actif Raspberry Pi 5,Raspberry Pi Active Cooler officiel,1,5.95,5.95,estimation,,Le Pi 5 chauffe plus que le Pi 4 ; recommandé dans le boîtier fermé.
