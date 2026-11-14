@@ -15,6 +15,7 @@ NEMA34 6 A, contrôleur PlanetCNC, broche 2,2 kW.
 ```
 fab-diy/
 ├── bom/
+│   ├── commandes/           Listes de commande par fournisseur (générées)
 │   ├── fab-diy-bom.csv      Liste d'achat chiffrée : 191 lignes + port, fournisseur, lien, prix TTC
 │   └── chiffrage/           Recherche de prix par lot (A structure, B guidage, C électronique, D visserie/acier)
 ├── cad/
@@ -29,6 +30,7 @@ fab-diy/
 │       ├── diy/             Pièces redessinées : pattes de fixation des boîtiers (DXF + plan de pose)
 │       └── preview.png      Aperçu de tous les DXF
 ├── docs/
+│   ├── plan-d-action.md     Par où commencer : vérifications, devis, commandes, dans l'ordre
 │   ├── budget.md            Synthèse du chiffrage France (~7 230 € TTC), fournisseurs alternatifs, variantes, points à régler
 │   ├── verifications.md     Mesures dans le STEP : rainures, cornières, crémaillère, axe Y en tronçons, comptages
 │   ├── profiles-coupe.md    Fiche de coupe et de taraudage des profilés, à joindre au devis
@@ -42,6 +44,7 @@ fab-diy/
 │   ├── flatten_bom.py       Nomenclatures ERP imbriquées → liste d'achat
 │   ├── price_bom.py         Fusionne bom/chiffrage/ dans la liste d'achat et totalise
 │   ├── make_limits_pcb.py   Génère la carte des fins de course (Gerber) et vérifie les isolements
+│   ├── make_orders.py       Listes de commande par fournisseur, à partir de la BOM
 │   ├── make_laser_quote.py  Dossier de devis laser : liste des pièces et zip des fichiers
 │   ├── make_cu_bracket.py   Patte de fixation des boîtiers : DXF et plan de pose
 │   ├── extract_steel.py     STEP → DXF (plaques) / STEP (tôles pliées)
@@ -62,7 +65,7 @@ mkdir -p cad/source && cd cad/source && for f in "FAB V1.0.stp" "FAB-CU V1.0.stp
 uv venv .venv --python 3.12 && uv pip install --python .venv/bin/python -r requirements.txt
 
 # 3. Liste d'achat, puis chiffrage (les prix viennent de bom/chiffrage/*.csv)
-python3 scripts/flatten_bom.py && python3 scripts/price_bom.py
+python3 scripts/flatten_bom.py && python3 scripts/price_bom.py && python3 scripts/make_orders.py
 
 # 4. Pièces acier (~1 min et ~2 Go de RAM pour le STEP principal)
 .venv/bin/python scripts/extract_steel.py "cad/source/FAB V1.0.stp"   cad/steel/fab
@@ -72,6 +75,8 @@ python3 scripts/flatten_bom.py && python3 scripts/price_bom.py
 ```
 
 ## Feuille de route
+
+**Par où commencer : [`docs/plan-d-action.md`](docs/plan-d-action.md).**
 
 - [x] Récupérer les fichiers officiels (nomenclatures, STEP, schémas, notice)
 - [x] Liste d'achat aplatie avec catégories

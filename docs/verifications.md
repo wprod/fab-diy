@@ -108,3 +108,25 @@ La pièce s'appelle « Pulley HTD3M & Pinion » dans le STEP, mais son diamètre
 | HTD-3M, 132 dents | 132 × 3 / π − 0,76 = 125,29 mm |
 
 C'est donc bien une **5M de 80 dents**, comme chiffré. Avec la poulie moteur de 20 dents, la réduction est de 4. L'ensemble poulie et pignon fait 45 mm de large et tourne sur une vis à épaulement M10 de Ø12.
+
+## 8. Visserie : la nomenclature couvre le modèle 3D
+
+Contrôle du 14 novembre 2026 : chaque vis, écrou et rondelle du STEP a été compté et comparé à la nomenclature.
+
+| Article | STEP | Nomenclature |
+|---|---:|---:|
+| Vis CHC M6×16 (y compris celles des cornières) | 312 | 318 |
+| Vis CHC M6×20 | 66 | 66 |
+| Vis CHC M5×16 | 178 | 190 |
+| Rondelles larges M6 | 272 | 276 |
+| Écrous coulissants M6 | 316 | 368 |
+| Écrous coulissants M5 | 158 | 168 |
+| Écrous frein M4 / M5 / M6 | 24 / 20 / 14 | 24 / 20 / 14 |
+| Entretoises M5 de 19, 30 et 6 mm | 8 / 12 / 2 | 8 / 12 / 2 |
+| Cornières de 30 | 36 | 38 |
+| Cornières de 60 | 50 | 46 |
+
+- **La visserie est cohérente** : la nomenclature couvre le modèle, avec une petite marge.
+- **Seules les cornières de 60 manquent** (46 pour 50). La BOM en achète déjà 50.
+- Trois petits écarts viennent du modèle lui-même : l'ensemble moteur gauche est une version plus ancienne que le droit, et n'a pas exactement les mêmes vis (M4×30, M5×45 ou M5×50, M6×25 à tête bombée). La nomenclature suit la version récente. Ces vis s'achètent par sachet, donc cela ne change rien à la commande.
+- Le boîtier de commande et ses vis ne sont pas dans ce modèle : ils ne sont pas comptés ici.

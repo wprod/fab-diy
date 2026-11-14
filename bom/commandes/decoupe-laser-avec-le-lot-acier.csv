@@ -1,0 +1,2 @@
+ref_mekanika,designation,produit,quantite_achat,prix_unitaire_ttc_eur,total_ttc_eur,confiance,lien,notes
+M00488,End connection plate 30x60 for Foot M12,"Plaque 60 x 30 x 10 mm acier, DXF cad/steel/fab/dxf/Foot_Plate_3060_M6_v2_t10mm_x6.dxf, taraudage M12 central",6,3.97,23.80,estimation,,Aucun équivalent 30x60 M12 rainure 6 chez Dold ni Motedis (Dold : 30x60 en M8 seulement). À ajouter au devis laser 10 mm. Mettre 0 si le lot acier les chiffre déjà.

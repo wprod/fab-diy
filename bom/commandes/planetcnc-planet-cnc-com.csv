@@ -1,0 +1,4 @@
+ref_mekanika,designation,produit,quantite_achat,prix_unitaire_ttc_eur,total_ttc_eur,confiance,lien,notes
+M00367,CNC USB Controller Mk3/4,CNC controller Mk3/4 (4 axes),1,142.80,142.80,vérifié,https://shop.planet-cnc.com/product/cnc-controller-mk34/,"119,00 € HT affiché, ×1,21. Licence vendue à part (ligne M00368)"
+M00368,CNC USB Controller license,PlanetCNC controller license (logiciels TNG + CNCUSB),1,82.80,82.80,vérifié,https://shop.planet-cnc.com/product/planetcnc-controller-license/,"69,00 € HT affiché, ×1,21. Licence NON incluse avec la carte : sans licence la carte est limitée à 25 mouvements"
+,Frais de port PlanetCNC,,,,14.88,estimation,,"Frais non publiés, calculés au panier"
