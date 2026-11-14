@@ -29,12 +29,12 @@ Les drivers sont câblés en **cathode commune** : PUL−, DIR− et ENA− sont
 
 | Connecteur du PlanetCNC | Driver | Moteur |
 |---|---|---|
-| Axis 1 (STEP, DIR, ENA, GND) | driver du bas du schéma | X *(probable)* |
-| Axis 2 | 3e driver | Y1 *(probable)* |
+| Axis 1 (STEP, DIR, ENA, GND) | driver du bas du schéma | **X** |
+| Axis 2 | 3e driver | **Y1** |
 | Axis 3 | 2e driver, nommé « Z » dans le schéma | **Z** |
-| Axis 4 | 1er driver | Y2 *(probable)* |
+| Axis 4 | 1er driver | **Y2** |
 
-Seul l'axe Z est nommé dans le schéma. L'attribution de X, Y1 et Y2 suit l'usage (le 4e axe est l'esclave de Y) : à confirmer dans la configuration PlanetCNC de Mekanika ou sur le Discord.
+Seul l'axe Z est nommé dans le schéma. L'attribution de X et de Y vient du profil PlanetCNC publié par Mekanika, où les sorties 2 et 4 pilotent toutes deux l'axe Y ([reglages-planetcnc.md](reglages-planetcnc.md)).
 
 Les sorties d'alarme des drivers (ALM+, ALM−) ne sont pas câblées dans l'original.
 
@@ -176,5 +176,4 @@ Ces choix sont dans `bom/chiffrage/lot-K-cablage.csv`. Pour revenir en arrière,
 - **Palpeur Z :** l'original l'alimente en **5 V**. Celui de la BOM est annoncé « 24 V, 3 fils ». Vérifier qu'il fonctionne en 5 V, ou l'alimenter en 24 V et s'assurer que sa sortie ne renvoie pas 24 V sur IN1.
 - **Bornes des CL86T et CL57T :** noms et ordre des bornes codeur, et type de la sortie alarme (ouverte ou fermée au repos, réglable sur certains modèles). Le câblage en parallèle suppose une sortie qui se ferme en cas de défaut ; si elle s'ouvre, il faut câbler les 4 en série.
 - **Entrées du PlanetCNC :** niveau actif de IN4 et de E-Stop, et type des sorties OUT1 (peut-elle commander directement le module relais ?).
-- **Attribution des axes** X, Y1, Y2 sur Axis 1, 2 et 4.
 - **Sections :** 1,5 mm² pour le secteur et le 72 V jusqu'aux drivers, 2,5 mm² entre contacteur, relais et prise de la Makita, 0,25 à 0,5 mm² pour les signaux. Embouts sertis sur tous les fils souples.
