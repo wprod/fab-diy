@@ -53,11 +53,11 @@ Le reste (visserie, électricité, câbles) représente une quinzaine de petites
 
 ## Étape 6 : montage
 
-Suivre le guide officiel Mekanika (support.mekanika.io). Les particularités de cette version :
+Suivre le guide officiel Mekanika (support.mekanika.io), avec [notes-de-montage.md](notes-de-montage.md) à côté : cette page liste tout ce qui diffère pour cette machine. En résumé :
 
 - **le châssis est l'ancienne version** : aux étapes 2, 9 et 12 du chapitre 1, le « support du boîtier de commande » n'est pas monté à 500 mm de haut, il devient une troisième traverse basse ([verifications.md](verifications.md), section 9) ;
 - le boîtier de commande se pose à plat sur les deux traverses basses avant ;
 - l'axe Y est en deux moitiés, le bout taraudé des 30×120 vers l'extérieur ([verifications.md](verifications.md), section 4) ;
 - les 14 goussets et leurs positions ([verifications.md](verifications.md), section 5) ;
-- le gabarit de montage (`cad/gabarits/`, pièce de 60 × 60 mm en PMMA de 3 mm) sert de cale pour régler les capteurs et l'accouplement ;
+- les gabarits se font soi-même : 2 barres de MDF de 18 mm longues de 322,5 mm, et le petit gabarit PMMA de `cad/gabarits/` ;
 - la partie 230 V est à faire relire avant la première mise sous tension ([plan-cablage.md](plan-cablage.md)).

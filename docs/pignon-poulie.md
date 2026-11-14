@@ -20,16 +20,33 @@ La pièce ne transmet aucun couple à un arbre : la courroie entraîne la poulie
 
 Réduction : poulie moteur de 20 dents, soit **4:1**. Le diamètre primitif du pignon est de 30 mm : un tour de pignon fait avancer le portique de 94,25 mm.
 
-## Roulements : un écart entre le STEP et la nomenclature
+## Deux versions de la pièce
 
-| Source | Côté poulie | Côté pignon |
+Le STEP publié et le guide de montage ne décrivent pas la même version. Seuls les alésages changent : la denture, la poulie et la longueur sont identiques.
+
+| | STEP publié (« Q5_03 v6 ») | Guide et nomenclature (« Pinion v2 ») |
 |---|---|---|
-| STEP (pièce « Q5_03 v6 ») | logement Ø37 × 12 → **6301-2RS** (12 × 37 × 12) | logement Ø18 × 4 → roulement 12 × 18 × 4 (type 6701) |
-| Nomenclature (« Pinion v2 ») | 6301-2RS | **6801-ZZ** (12 × 21 × 5) |
+| Côté poulie | logement Ø37 × 12 → 6301-2RS (12 × 37 × 12) | le même |
+| Côté pignon | logement Ø18 × 4 → roulement 12 × 18 × 4 | roulement **6801-ZZ, 12 × 21 × 5** |
+| Entre les deux roulements | alésage de Ø12,2 | entretoise C de 12 × 18 × 18, qui passe dans l'alésage |
+| Montage | cotes complètes, mesurées | ordre d'empilage décrit dans le guide ([notes-de-montage.md](notes-de-montage.md)) |
 
-La nomenclature décrit donc une version plus récente que le STEP, avec un roulement un peu plus gros côté pignon et trois entretoises (12 × 16 × 3, 12 × 18 × 8, 12 × 18 × 18).
+**Version retenue : celle du guide (v2).** C'est elle que la nomenclature, la BOM et le guide de montage décrivent, et ses bagues intérieures sont serrées en un seul empilage, ce qui est le montage correct de deux roulements sur un axe fixe.
 
-**Conseil :** suivre le STEP, qui est la seule géométrie complète disponible, et monter un 6701 côté pignon. Un logement de Ø21 pour le 6801 ne laisserait que 2,4 mm de matière sous les dents (pied à Ø25,8). Si l'atelier préfère le 6801, il faut le lui faire valider. Dans ce cas, deux 6701 sont à acheter à la place des deux 6801 de la BOM (quelques euros).
+### Alésages de la version v2
+
+Ces cotes sont **déduites de l'empilage** du guide (3 + 5 + 18 + 12 + 8 mm sur une vis à épaulement de 50 mm) et de la longueur de la pièce. Elles ne sont pas mesurées sur une pièce réelle : à faire valider par l'atelier, roulements et entretoises en main.
+
+| En partant du bout du pignon | Diamètre | Longueur |
+|---|---|---|
+| Dégagement pour la tête de vis et l'entretoise A | Ø21,5 environ | 10 mm |
+| Logement du roulement 6801 | Ø21 H7 | 5 mm |
+| Passage de l'entretoise C (Ø18) | Ø19 | 18 mm |
+| Logement du roulement 6301 | Ø37 H7 | 12 mm |
+
+Total : 10 + 5 + 18 + 12 = 45 mm, la longueur de la pièce.
+
+**Point de vigilance :** sous les dents du pignon (pied à Ø25,8), il ne reste que 2,4 mm de matière autour du logement de Ø21. C'est le choix de Mekanika pour la v2, mais dans un pignon du commerce en C45 non trempé, l'atelier peut préférer la version du STEP (logement de Ø18, 3,9 mm de matière), avec un roulement 12 × 18 × 4 à la place du 6801.
 
 ## Deux façons de l'obtenir
 
@@ -40,8 +57,8 @@ La nomenclature décrit donc une version plus récente que le STEP, avec un roul
 
 ## À donner à l'atelier
 
-- cette fiche et le dessin ;
-- une vis à épaulement ISO 7379 Ø12 × 50 M10 et les deux roulements, pour ajuster les logements ;
+- cette fiche et le dessin (il montre les alésages de la version du STEP) ;
+- une vis à épaulement ISO 7379 Ø12 × 50 M10, les deux roulements et les trois entretoises, pour ajuster les logements ;
 - la tolérance attendue : logements de roulements en H7, concentricité de la denture du pignon par rapport aux logements meilleure que 0,05 mm. C'est elle qui fait la régularité de l'axe Y.
 
 ## Poulies moteur

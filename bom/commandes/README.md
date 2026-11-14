@@ -20,20 +20,20 @@ Générées par `scripts/make_orders.py` à partir de [`fab-diy-bom.csv`](../fab
 | Dold Mechatronik (pignon) + AliExpress (poulie) + atelier d'usinage local | 1 | 138 € | 138 € | [`dold-mechatronik-pignon-aliexpress-poulie-atelier-d-usinage-.csv`](dold-mechatronik-pignon-aliexpress-poulie-atelier-d-usinage-.csv) |
 | AliExpress (vendeur entrepôt UE si dispo) | 8 | 127 € | 127 € | [`aliexpress-vendeur-entrepot-ue-si-dispo.csv`](aliexpress-vendeur-entrepot-ue-si-dispo.csv) |
 | DamenCNC (Pays-Bas) | 1 | 126 € | 126 € | [`damencnc-pays-bas.csv`](damencnc-pays-bas.csv) |
+| Motedis | 4 | 100 € | 0 € | [`motedis.csv`](motedis.csv) |
 | Leroy Merlin (retrait en magasin) | 1 | 100 € | 100 € | [`leroy-merlin-retrait-en-magasin.csv`](leroy-merlin-retrait-en-magasin.csv) |
-| Motedis | 3 | 80 € | 0 € | [`motedis.csv`](motedis.csv) |
 | Dold Mechatronik + atelier local | 1 | 59 € | 59 € | [`dold-mechatronik-atelier-local.csv`](dold-mechatronik-atelier-local.csv) |
 | Audiophonics (Bordeaux) | 2 | 47 € | 7 € | [`audiophonics-bordeaux.csv`](audiophonics-bordeaux.csv) |
-| Découpe laser bois/acrylique en ligne (Snijlab NL / Formulor DE) | 4 | 46 € | 46 € | [`decoupe-laser-bois-acrylique-en-ligne-snijlab-nl-formulor-de.csv`](decoupe-laser-bois-acrylique-en-ligne-snijlab-nl-formulor-de.csv) |
 | Quincaillerie / négoce (Rampa SKD acier ou équivalent) | 1 | 35 € | 35 € | [`quincaillerie-negoce-rampa-skd-acier-ou-equivalent.csv`](quincaillerie-negoce-rampa-skd-acier-ou-equivalent.csv) |
 | Sorotec | 1 | 30 € | 0 € | [`sorotec.csv`](sorotec.csv) |
 | AliExpress / Amazon | 2 | 30 € | 30 € | [`aliexpress-amazon.csv`](aliexpress-amazon.csv) |
 | Découpe laser (avec le lot acier) | 1 | 24 € | 24 € | [`decoupe-laser-avec-le-lot-acier.csv`](decoupe-laser-avec-le-lot-acier.csv) |
 | Bits and Parts (bitsandparts.nl) | 2 | 19 € | 8 € | [`bits-and-parts-bitsandparts-nl.csv`](bits-and-parts-bitsandparts-nl.csv) |
 | Reichelt / Conrad | 3 | 17 € | 17 € | [`reichelt-conrad.csv`](reichelt-conrad.csv) |
+| Découpe laser bois/acrylique en ligne (Snijlab NL / Formulor DE) | 2 | 14 € | 14 € | [`decoupe-laser-bois-acrylique-en-ligne-snijlab-nl-formulor-de.csv`](decoupe-laser-bois-acrylique-en-ligne-snijlab-nl-formulor-de.csv) |
 | Reichelt (reichelt.com/fr) | 1 | 12 € | 12 € | [`reichelt-reichelt-com-fr.csv`](reichelt-reichelt-com-fr.csv) |
 | Amazon.fr (optionnel, décoratif) | 5 | 11 € | 11 € | [`amazon-fr-optionnel-decoratif.csv`](amazon-fr-optionnel-decoratif.csv) |
 | JLCPCB | 2 | 10 € | 10 € | [`jlcpcb.csv`](jlcpcb.csv) |
 | Reichelt / Kubii | 1 | 6 € | 6 € | [`reichelt-kubii.csv`](reichelt-kubii.csv) |
 | Impression 3D maison (filament PETG) | 1 | 3 € | 3 € | [`impression-3d-maison-filament-petg.csv`](impression-3d-maison-filament-petg.csv) |
-| **Total** | | **7217 €** | | |
+| **Total** | | **7205 €** | | |

@@ -30,8 +30,9 @@ fab-diy/
 │       ├── diy/             Pièces redessinées : pattes de fixation des boîtiers (DXF + plan de pose)
 │       └── preview.png      Aperçu de tous les DXF
 ├── docs/
+│   ├── notes-de-montage.md  Ce qui diffère du guide de montage officiel pour cette machine, gabarits à faire
 │   ├── plan-d-action.md     Par où commencer : vérifications, devis, commandes, dans l'ordre
-│   ├── budget.md            Synthèse du chiffrage France (~7 220 € TTC), fournisseurs alternatifs, variantes, points à régler
+│   ├── budget.md            Synthèse du chiffrage France (~7 210 € TTC), fournisseurs alternatifs, variantes, points à régler
 │   ├── verifications.md     Mesures dans le STEP : rainures, cornières, crémaillère, axe Y en tronçons, comptages
 │   ├── profiles-coupe.md    Fiche de coupe et de taraudage des profilés, à joindre au devis
 │   ├── devis-decoupe.md     Demande de devis pour la découpe laser : contenu du dossier, message type
@@ -81,7 +82,7 @@ python3 scripts/flatten_bom.py && python3 scripts/price_bom.py && python3 script
 - [x] Récupérer les fichiers officiels (nomenclatures, STEP, schémas, notice)
 - [x] Liste d'achat aplatie avec catégories
 - [x] DXF des plaques acier + STEP des tôles pliées
-- [x] Chiffrer la liste d'achat pour la France : ~7 220 € TTC, voir `docs/budget.md`
+- [x] Chiffrer la liste d'achat pour la France : ~7 210 € TTC, voir `docs/budget.md`
 - [x] Goussets : 14, positions relevées dans le STEP (`docs/verifications.md`)
 - [x] Profilés 30×60 de 1410 mm : 11, confirmé par le guide de montage officiel (`docs/verifications.md`, section 9)
 - [x] Fixation des boîtiers : posés à plat sur les deux traverses basses avant, comme dans le guide officiel pour ce châssis. Pattes facultatives, voir `docs/pieces-acier.md`
@@ -91,8 +92,8 @@ python3 scripts/flatten_bom.py && python3 scripts/price_bom.py && python3 script
 - [ ] Profilés : devis coupe à longueur + taraudage M6 aux extrémités. Fiche prête : `docs/profiles-coupe.md`
 - [ ] Électronique : carte des fins de course. Redessinée, Gerber prêts (`docs/carte-fins-de-course.md`) ; à vérifier avec une embase en main, puis à faire fabriquer
 - [x] Choix du contrôle : PlanetCNC Mk3/4 sur le Raspberry Pi 5 (comme l'original), moteurs en boucle fermée
-- [ ] Gabarits de montage : DXF copié dans `cad/gabarits/`, à faire découper (PMMA 3 mm)
-- [ ] Montage en suivant le guide officiel
+- [ ] Gabarits de montage : cotes relevées (`docs/notes-de-montage.md`). 2 barres de MDF à couper, gabarit PMMA de `cad/gabarits/` à faire découper
+- [ ] Montage en suivant le guide officiel et `docs/notes-de-montage.md`
 
 ## Points ouverts
 
