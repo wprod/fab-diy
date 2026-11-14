@@ -37,6 +37,7 @@ fab-diy/
 │   ├── profiles-coupe.md    Fiche de coupe et de taraudage des profilés, à joindre au devis
 │   ├── devis-decoupe.md     Demande de devis pour la découpe laser : contenu du dossier, message type
 │   ├── pignon-poulie.md     Fiche d'usinage du pignon-poulie de l'axe Y, cotes relevées dans le STEP
+│   ├── reglages-planetcnc.md  Réglages du profil PlanetCNC de Mekanika, adaptations, premier essai
 │   ├── plan-cablage.md      Câblage d'origine relevé dans les schémas, modifications, décisions à prendre
 │   ├── boitier-commande.md  Implantation des ajouts de la boucle fermée dans le boîtier de commande
 │   ├── carte-fins-de-course.md  Schéma décodé, câblage, composants, points à vérifier
@@ -92,6 +93,7 @@ python3 scripts/flatten_bom.py && python3 scripts/price_bom.py && python3 script
 - [ ] Profilés : devis coupe à longueur + taraudage M6 aux extrémités. Fiche prête : `docs/profiles-coupe.md`
 - [ ] Électronique : carte des fins de course. Redessinée, Gerber prêts (`docs/carte-fins-de-course.md`) ; à vérifier avec une embase en main, puis à faire fabriquer
 - [x] Choix du contrôle : PlanetCNC Mk3/4 sur le Raspberry Pi 5 (comme l'original), moteurs en boucle fermée
+- [x] Réglages du logiciel : profil PlanetCNC de Mekanika résumé et adapté (`docs/reglages-planetcnc.md`)
 - [ ] Gabarits de montage : cotes relevées (`docs/notes-de-montage.md`). 2 barres de MDF à couper, gabarit PMMA de `cad/gabarits/` à faire découper
 - [ ] Montage en suivant le guide officiel et `docs/notes-de-montage.md`
 

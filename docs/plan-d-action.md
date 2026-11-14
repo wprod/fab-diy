@@ -9,7 +9,7 @@ Les listes de commande par fournisseur sont dans [`bom/commandes/`](../bom/comma
 |---|---|---|
 | ~~Compter les profilés 30×60 de 1410 mm~~ | **Fait : 11**, confirmé par le guide officiel | [verifications.md](verifications.md), section 9 |
 | ~~Vérifier la pose des boîtiers~~ | **Fait :** à plat sur les deux traverses basses avant, sans patte | [pieces-acier.md](pieces-acier.md) |
-| Demander quel connecteur d'axe pilote X, Y1 et Y2 | Seul Z est nommé dans le schéma | [plan-cablage.md](plan-cablage.md) |
+| ~~Savoir quel connecteur d'axe pilote X, Y1 et Y2~~ | **Fait :** Axis 1 = X, 2 = Y1, 3 = Z, 4 = Y2, d'après le profil PlanetCNC de Mekanika | [reglages-planetcnc.md](reglages-planetcnc.md) |
 
 ## Étape 2 : demander les devis (gratuit, réponses en quelques jours)
 
@@ -48,7 +48,7 @@ Le reste (visserie, électricité, câbles) représente une quinzaine de petites
 - **Profilés :** vérifier que les pièces d'une même longueur sont identiques entre elles.
 - **Boîtier de commande :** présenter l'alimentation 48 V, le driver CL57T, le contacteur et la prise de la Makita dans la tôle avant de percer ([boitier-commande.md](boitier-commande.md)).
 - **Palpeur Z :** vérifier qu'il fonctionne en 5 V.
-- **Drivers :** noter le type de la sortie alarme (ouverte ou fermée au repos).
+- **Drivers :** les régler sur 6400 impulsions par tour, et noter le type de la sortie alarme (ouverte ou fermée au repos).
 - **Pieds en caoutchouc :** mesurer leur diamètre (17 mm attendus).
 
 ## Étape 6 : montage
@@ -61,3 +61,7 @@ Suivre le guide officiel Mekanika (support.mekanika.io), avec [notes-de-montage.
 - les 14 goussets et leurs positions ([verifications.md](verifications.md), section 5) ;
 - les gabarits se font soi-même : 2 barres de MDF de 18 mm longues de 322,5 mm, et le petit gabarit PMMA de `cad/gabarits/` ;
 - la partie 230 V est à faire relire avant la première mise sous tension ([plan-cablage.md](plan-cablage.md)).
+
+## Étape 7 : logiciel et premier essai
+
+Importer le profil PlanetCNC de Mekanika, puis suivre [reglages-planetcnc.md](reglages-planetcnc.md) : ce qu'il faut adapter, et l'ordre des vérifications avant la première prise d'origine.
