@@ -1,0 +1,18 @@
+fichier,piece,matiere,epaisseur_mm,quantite,type,dimensions_mm,reprises
+Foot_Plate_3060_M6_v2_t10mm_x6.dxf,Foot Plate 3060 M6 v2,acier S235,10,6,plaque (DXF),60.0 x 30.0,trou central à tarauder M12
+Gantry_V2_v25_t10mm_x2.dxf,Gantry_V2 v25,acier S235,10,2,plaque (DXF),432.0 x 300.0,"1 trou Ø10,2 à tarauder M12"
+Fab_XL_X_Bearing_Z_v1_t8mm_x1.dxf,Fab XL - X_Bearing Z v1,acier S235,8,1,plaque (DXF),130.0 x 65.0,
+Fab_XL_X_Bearing_blocks_nuts_v10_t8mm_x1.dxf,Fab XL - X_Bearing blocks & nuts v10,acier S235,8,1,plaque (DXF),178.0 x 240.0,
+Fab_XL_X_Motor_Z_v1_t8mm_x1.dxf,Fab XL - X_Motor Z v1,acier S235,8,1,plaque (DXF),160.0 x 73.0,
+Fab_XL_Z_plate_v4_t8mm_x1.dxf,Fab XL - Z_plate v4,acier S235,8,1,plaque (DXF),160.0 x 190.0,"8 trous Ø5,04 à tarauder M6"
+Gantry_back_plate_v12_t8mm_x1.dxf,Gantry back plate v12,acier S235,8,1,plaque (DXF),550.0 x 200.0,"logo découpé, vu en miroir dans le DXF"
+Limit_switches_support_02_v15_t8mm_x4.dxf,Limit switches support 02 v15,acier S235,8,4,plaque (DXF),80.0 x 120.0,
+Nut_Offset_bracket_v2_t8mm_x2.dxf,Nut Offset bracket v2,acier S235,8,2,plaque (DXF),52.0 x 40.0,
+Rack_Pinion_drive_plate_04_v21_t8mm_x2.dxf,Rack & Pinion drive plate_04 v21,acier S235,8,2,plaque (DXF),286.0 x 151.8,"4 trous Ø4,3 à tarauder M5 ; découper 2 pièces identiques (une se retourne)"
+Spindle_plate_t8mm_x1.dxf,Spindle plate,acier S235,8,1,plaque (DXF),117.8 x 110.0,percée pour une broche Ø80 ; trous du support Makita Ø65 à percer à la main
+Triangulation_v6_t8mm_x14.dxf,Triangulation v6,acier S235,8,14,plaque (DXF),394.3 x 30.0,
+Cable_chain_support_02_v4_Component1_t3mm_x4.step,Cable chain support 02 v4 - Component1,acier S235,3,4,tôle pliée (STEP),,"tôle pliée, 1 pli"
+Bearing_Support_Offset_Plate_v7_t3mm_x2.dxf,Bearing Support Offset Plate v7,acier S235,3,2,plaque (DXF),42.0 x 42.0,
+CU_VFD_Mounting_plate_DIY_t3mm_x4.dxf,CU-VFD Mounting plate (redessinée),acier S235,3,4,plaque (DXF),64.0 x 45.0,2 suffisent sans boîtier VFD ; 4 pour ne pas recommander plus tard
+Fab_Control_Unit_Base_v50_Base_t1.5mm_x1.step,Fab Control Unit Base v50 - Base,acier S235,1.5,1,tôle pliée (STEP),,tôle pliée : le développé est à calculer par le découpeur ; écrous à sertir M3 à poser
+Fab_Control_Unit_Cover_v14_Cover_t1.5mm_x1.step,Fab Control Unit Cover v14 - Cover,acier S235,1.5,1,tôle pliée (STEP),,tôle pliée : le développé est à calculer par le découpeur ; écrous à sertir M3 à poser
