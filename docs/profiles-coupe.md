@@ -18,7 +18,7 @@ Soit 6,12 m de 30×120, 11,52 m de 60×60, 19,11 m de 30×60 et 0,48 m de 30×30
 
 - **Tolérance de longueur.** Les pièces d'une même ligne doivent être **identiques entre elles** : demander une coupe en série sur la même butée. L'écart entre deux pièces compte plus que la cote exacte, surtout pour les 6 pieds, les 4 longerons 30×120 et les traverses de 1410 mm (elles fixent l'écartement des deux rails Y).
 - **Coupes d'équerre et ébavurées.** Les 30×120 se raccordent bout à bout sous le rail.
-- **Quantité des 30×60 de 1410 mm :** 11 d'après le STEP, 9 d'après la nomenclature. Voir [verifications.md](verifications.md), section 5.
+- **Quantité des 30×60 de 1410 mm :** 11, comme dans le STEP et le guide de montage officiel. La nomenclature publiée, qui en donne 9, est en retard. Voir [verifications.md](verifications.md), section 9.
 - **Taraudages :** M6 dans les alésages de bout du profilé, profondeur d'au moins 15 mm (les vis relevées sont des M6×20 à travers une tôle de 8 ou 10 mm).
 
 ## Ce que reçoivent les bouts taraudés (relevé dans le STEP)

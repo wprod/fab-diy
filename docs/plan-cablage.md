@@ -48,7 +48,7 @@ Les sorties d'alarme des drivers (ALM+, ALM−) ne sont pas câblées dans l'ori
 | B− | 4 |
 | *(corps de l'embase)* | − de l'alimentation 72 V |
 
-Câbles moteur d'origine : X 340 cm, Y1 340 cm, Y2 530 cm, Z 570 cm.
+Câbles moteur d'origine : X 340 cm, Y1 340 cm, Y2 530 cm, Z 570 cm. En façade, les embases sont dans l'ordre X, Y1, Z, Y2 en partant du ventilateur (plan de raccordement du guide officiel) ; les fiches métalliques sont celles des moteurs.
 
 ### Fins de course
 

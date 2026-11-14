@@ -66,7 +66,7 @@ Entraxes relevés dans `cad/steel/fab-cu/step/Fab_Control_Unit_Base_v50_Base_t1.
 - 6 perçages de Ø22,1 mm au pas de **27 mm** : 4 en haut, 2 en bas ;
 - 2 trous de fixation de Ø3,2 mm par embase, en diagonale à ±9,9 mm de l'axe.
 
-Vue de l'extérieur du boîtier, la rangée du haut porte X, Y1, Z, Y2 de gauche à droite. La rangée du bas porte X et Y1, sous les deux premières. C'est la disposition de la page « Back Side » du schéma.
+Vue de l'extérieur du boîtier, la rangée du haut porte X, Y1, Z, Y2 de gauche à droite. La rangée du bas porte X et Y1, sous les deux premières. C'est la disposition de la page « Back Side » du schéma, et celle du plan de raccordement du guide officiel : X, Y1, Z, Y2 en partant du ventilateur.
 
 La carte fait **99,5 × 51 mm**, en 2 couches. Les embases sont sur la face avant (vers la tôle), les borniers se soudent sur la face arrière (vers l'intérieur du boîtier). Les 6 embases vissées à la tôle tiennent la carte : il n'y a pas d'autre fixation.
 

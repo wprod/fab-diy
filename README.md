@@ -31,7 +31,7 @@ fab-diy/
 │       └── preview.png      Aperçu de tous les DXF
 ├── docs/
 │   ├── plan-d-action.md     Par où commencer : vérifications, devis, commandes, dans l'ordre
-│   ├── budget.md            Synthèse du chiffrage France (~7 230 € TTC), fournisseurs alternatifs, variantes, points à régler
+│   ├── budget.md            Synthèse du chiffrage France (~7 220 € TTC), fournisseurs alternatifs, variantes, points à régler
 │   ├── verifications.md     Mesures dans le STEP : rainures, cornières, crémaillère, axe Y en tronçons, comptages
 │   ├── profiles-coupe.md    Fiche de coupe et de taraudage des profilés, à joindre au devis
 │   ├── devis-decoupe.md     Demande de devis pour la découpe laser : contenu du dossier, message type
@@ -81,10 +81,10 @@ python3 scripts/flatten_bom.py && python3 scripts/price_bom.py && python3 script
 - [x] Récupérer les fichiers officiels (nomenclatures, STEP, schémas, notice)
 - [x] Liste d'achat aplatie avec catégories
 - [x] DXF des plaques acier + STEP des tôles pliées
-- [x] Chiffrer la liste d'achat pour la France : ~7 230 € TTC, voir `docs/budget.md`
+- [x] Chiffrer la liste d'achat pour la France : ~7 220 € TTC, voir `docs/budget.md`
 - [x] Goussets : 14, positions relevées dans le STEP (`docs/verifications.md`)
-- [ ] Profilés 30×60 de 1410 mm : 11 dans le STEP, 9 dans la nomenclature. Chiffré pour 11, à confirmer avec le guide de montage
-- [x] Pattes CU-VFD (M01379) absentes du STEP : redessinées d'après les cotes des boîtiers et des traverses, voir `docs/pieces-acier.md`
+- [x] Profilés 30×60 de 1410 mm : 11, confirmé par le guide de montage officiel (`docs/verifications.md`, section 9)
+- [x] Fixation des boîtiers : posés à plat sur les deux traverses basses avant, comme dans le guide officiel pour ce châssis. Pattes facultatives, voir `docs/pieces-acier.md`
 - [x] Vérifier rainures, cornières et crémaillère dans le STEP : voir `docs/verifications.md`
 - [ ] Régler les points restants de `docs/budget.md`. Faits : vis X (1500 mm confirmés), poulie Y (5M 80 dents), implantation du boîtier. Plan de câblage rédigé (`docs/plan-cablage.md`, choix faits dans le lot K). Fiche d'usinage du pignon-poulie (`docs/pignon-poulie.md`). Restent : trouver l'atelier (pignon-poulie, brochage des poulies moteur), devis de port
 - [ ] Devis réel découpe laser et pliage. Dossier prêt à envoyer : `docs/devis-decoupe.md`

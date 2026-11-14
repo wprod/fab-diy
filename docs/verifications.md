@@ -81,7 +81,7 @@ En retirer 2 laisserait un pied sans contreventement. **On en découpe 14.** Le 
 
 Les 60×60 de 1410 mm sont bien 6 dans les deux sources : 5 traverses de table et 1 traverse basse au milieu.
 
-L'écart n'est pas expliqué : le guide de montage en ligne (support.mekanika.io) n'a pas pu être consulté depuis cette session. Les traverses basses ne sont pas symétriques (2 à l'avant, 1 à l'arrière), donc 2 d'entre elles sont peut-être optionnelles. **La BOM est chiffrée pour 11** (+62 €), à confirmer avant de commander.
+**Confirmé par le guide de montage officiel, qui en utilise 11** (section 9). Les deux traverses rapprochées à l'avant portent les boîtiers. La BOM est chiffrée pour 11.
 
 ## 6. Vis à billes de l'axe X : il faut bien 1500 mm
 
@@ -130,3 +130,34 @@ Contrôle du 14 novembre 2026 : chaque vis, écrou et rondelle du STEP a été c
 - **Seules les cornières de 60 manquent** (46 pour 50). La BOM en achète déjà 50.
 - Trois petits écarts viennent du modèle lui-même : l'ensemble moteur gauche est une version plus ancienne que le droit, et n'a pas exactement les mêmes vis (M4×30, M5×45 ou M5×50, M6×25 à tête bombée). La nomenclature suit la version récente. Ces vis s'achètent par sachet, donc cela ne change rien à la commande.
 - Le boîtier de commande et ses vis ne sont pas dans ce modèle : ils ne sont pas comptés ici.
+
+## 9. Ce que confirme le guide de montage officiel
+
+Lu le 14 novembre 2026 sur support.mekanika.io (chapitres « Table Frame » et « Machine Connection »).
+
+| Point | Guide officiel | Ce dépôt |
+|---|---|---|
+| Profilés 30×60 de 1410 mm | **11** : 6 traverses (étape 1) et 5 longerons (étape 2) | 11 ✔ |
+| Profilés 60×60 de 1410 mm | 6 (étapes 3 et 4) | 6 ✔ |
+| Pieds 30×60 de 600 mm | 6 | 6 ✔ |
+| Goussets | **14** : 6 en travers (étape 23) et 8 dans le sens de la longueur (étape 24) | 14 ✔ |
+| Jonction des 30×120 | « au centre du profilé vertical », bout non taraudé vers la jonction | section 4 ✔ |
+| Rails | bout à arête vive pour l'aboutage, bout ébavuré pour enfiler les patins | point 12 du budget |
+| Ordre des connecteurs moteurs et capteurs | X, Y1, Z, Y2 en partant du ventilateur ; les 2 embases du bas sont X et Y1 | carte des fins de course ✔ |
+
+La nomenclature publiée sur GitHub (9 profilés, 12 goussets) est donc en retard sur le guide.
+
+### Deux versions du châssis
+
+Le guide précise que son chapitre 1 vaut pour les machines livrées **depuis mars 2026**. Les deux versions utilisent les mêmes 11 profilés, placés différemment :
+
+| | Ancienne version | Nouvelle version (guide actuel) |
+|---|---|---|
+| Traverses basses 30×60 | 3, dont 2 rapprochées à l'avant | 2 |
+| Le 11e profilé | 3e traverse basse | « support du boîtier de commande » : un longeron fixé entre deux pieds, à 500 mm de la plaque de pied |
+| Boîtier de commande | posé à plat sur les 2 traverses basses avant, sans fixation | suspendu à la verticale sur 4 pattes à encoche |
+| Cornières de 60 / de 30 | 50 / 36 (comptées dans le STEP) | 46 / 40 (additionnées dans le guide) |
+
+**Le modèle 3D de ce dépôt est l'ancienne version**, et c'est celle que ce projet suit : tous les fichiers (STEP, DXF, tôles du boîtier) lui correspondent, et le boîtier s'y pose sans aucune pièce spéciale. La BOM achète 50 cornières de 60 et 38 de 30, ce qui couvre cette version.
+
+**Conséquence au montage :** suivre le guide officiel, sauf pour les étapes 2, 9 et 12 du chapitre 1. Au lieu de monter le « support du boîtier » à 500 mm de haut, ce profilé devient une troisième traverse basse, à 288 mm d'entraxe de la première (positions en section 5).

@@ -7,8 +7,8 @@ Les listes de commande par fournisseur sont dans [`bom/commandes/`](../bom/comma
 
 | À faire | Pourquoi | Où regarder |
 |---|---|---|
-| Compter les profilés 30×60 de 1410 mm dans le guide de montage Mekanika | 11 dans le modèle 3D, 9 dans la nomenclature. La BOM en compte 11 | support.mekanika.io, ou le Discord Mekanika |
-| Y vérifier aussi la pose des boîtiers sur les deux traverses basses avant | Les pattes ont été redessinées d'après les cotes, pas d'après le guide | [pieces-acier.md](pieces-acier.md) |
+| ~~Compter les profilés 30×60 de 1410 mm~~ | **Fait : 11**, confirmé par le guide officiel | [verifications.md](verifications.md), section 9 |
+| ~~Vérifier la pose des boîtiers~~ | **Fait :** à plat sur les deux traverses basses avant, sans patte | [pieces-acier.md](pieces-acier.md) |
 | Demander quel connecteur d'axe pilote X, Y1 et Y2 | Seul Z est nommé dans le schéma | [plan-cablage.md](plan-cablage.md) |
 
 ## Étape 2 : demander les devis (gratuit, réponses en quelques jours)
@@ -33,7 +33,7 @@ Ces devis portent sur environ 2 000 € d'estimations : ils décident si le budg
 
 | Commande | Montant | À préparer avant |
 |---|---:|---|
-| Profilés et accessoires, Dold (aluprofile-express.de) | ~1 690 € | [profiles-coupe.md](profiles-coupe.md) ; nombre de 30×60 confirmé |
+| Profilés et accessoires, Dold (aluprofile-express.de) | ~1 690 € | [profiles-coupe.md](profiles-coupe.md) |
 | Crémaillères, DamenCNC et Dold | ~1 400 € port compris | devis de port |
 | Rails, patins et paliers, Sorotec | ~890 € | confirmation des rails aboutés |
 | Acier découpé | ~570 € estimés | devis retenu |
@@ -53,8 +53,10 @@ Le reste (visserie, électricité, câbles) représente une quinzaine de petites
 
 ## Étape 6 : montage
 
-Suivre le guide officiel Mekanika. Les particularités de cette version :
+Suivre le guide officiel Mekanika (support.mekanika.io). Les particularités de cette version :
 
+- **le châssis est l'ancienne version** : aux étapes 2, 9 et 12 du chapitre 1, le « support du boîtier de commande » n'est pas monté à 500 mm de haut, il devient une troisième traverse basse ([verifications.md](verifications.md), section 9) ;
+- le boîtier de commande se pose à plat sur les deux traverses basses avant ;
 - l'axe Y est en deux moitiés, le bout taraudé des 30×120 vers l'extérieur ([verifications.md](verifications.md), section 4) ;
 - les 14 goussets et leurs positions ([verifications.md](verifications.md), section 5) ;
 - le gabarit de montage (`cad/gabarits/`, pièce de 60 × 60 mm en PMMA de 3 mm) sert de cale pour régler les capteurs et l'accouplement ;
