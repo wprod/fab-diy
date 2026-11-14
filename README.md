@@ -3,7 +3,8 @@
 Construire soi-même une CNC grand format à partir des fichiers open source de la
 **[Mekanika Fab](https://www.mekanika.io/fr/products/fab)** : surface de travail 1330 × 2700 mm,
 rails HGR20, vis à billes sur X et Z, double crémaillère module 2 sur Y,
-NEMA34 6 A, contrôleur PlanetCNC, broche 2,2 kW.
+NEMA34, contrôleur PlanetCNC, broche 2,2 kW.
+Cette version s'écarte de l'original sur trois points : moteurs en boucle fermée, affleureuse Makita en attendant la broche, arrêt d'urgence câblé.
 
 - Dépôt officiel : <https://github.com/mekanika-dev/fab>
 - Guide de montage : <https://support.mekanika.io/products/fab-cnc>
@@ -16,8 +17,8 @@ NEMA34 6 A, contrôleur PlanetCNC, broche 2,2 kW.
 fab-diy/
 ├── bom/
 │   ├── commandes/           Listes de commande par fournisseur (générées)
-│   ├── fab-diy-bom.csv      Liste d'achat chiffrée : 191 lignes + port, fournisseur, lien, prix TTC
-│   └── chiffrage/           Recherche de prix par lot (A structure, B guidage, C électronique, D visserie/acier)
+│   ├── fab-diy-bom.csv      Liste d'achat chiffrée : 191 lignes d'origine + ajouts et port, fournisseur, lien, prix TTC
+│   └── chiffrage/           Recherche de prix par lots A à K, appliqués dans l'ordre (détail dans docs/budget.md)
 ├── cad/
 │   ├── source/              STEP officiels (Git LFS, ~280 Mo, non versionnés)
 │   ├── pcb-fins-de-course/  Carte des fins de course : Gerber, perçage, aperçu
